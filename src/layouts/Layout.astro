@@ -28,10 +28,26 @@ const { title, description } = Astro.props;
       </style>
     </noscript>
     <Header />
-    <main>
+    <main class="bg-skew">
       <slot />
     </main>
     <Footer />
     <Pagefind />
   </body>
 </html>
+
+<style>
+  .bg-skew:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    transform: skewY(-5deg);
+    transform-origin: top left;
+    z-index: -1;
+    background-color: #ececec;
+    min-height: 500px;
+  }
+</style>
