@@ -1,18 +1,26 @@
-import { defineConfig } from "astro/config";
-import mdx from "@astrojs/mdx";
-import pagefind from "astro-pagefind";
-import tailwindcss from "@tailwindcss/vite";
+// @ts-check
+import { defineConfig } from 'astro/config';
+import sitemap from '@astrojs/sitemap';
+import { aonoteMarkdown } from './src/integrations/aonote-markdown.ts';
+import { site } from './src/site.config.ts';
 
-// https://astro.build/config
+/** @type {import('astro').AstroUserConfig} */
 export default defineConfig({
-  site: "https://astro-micro.vercel.app",
-  integrations: [mdx(), pagefind()],
+  site: site.baseUrl,
+  base: site.repoSubpath || undefined,
+  trailingSlash: 'always',
+  integrations: [
+    aonoteMarkdown(),
+    sitemap({
+      filter: (page) => !page.includes('/404'),
+    }),
+  ],
   vite: {
-    plugins: [tailwindcss()],
-  },
-  markdown: {
-    shikiConfig: {
-      theme: "css-variables",
+    build: {
+      cssMinify: true,
     },
+  },
+  devToolbar: {
+    enabled: false,
   },
 });

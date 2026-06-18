@@ -1,156 +1,29 @@
 ---
-import Layout from "@layouts/Layout.astro";
-import Container from "@components/Container.astro";
-import {SITE, HOME, SOCIALS} from "@consts";
-import ArrowCard from "@components/ArrowCard.astro";
-import Link from "@components/Link.astro";
-import {getCollection} from "astro:content";
-import type {CollectionEntry} from "astro:content";
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PostCard from '../components/PostCard.astro';
+import { site } from '../site.config';
+import { t } from '../i18n';
+import { siteHref } from '../utils/paths';
+import { getBlogPosts } from '../utils/posts';
 
-const blog = (await getCollection("blog"))
-    .filter((post) => !post.data.draft)
-    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-    .slice(0, SITE.NUM_POSTS_ON_HOMEPAGE);
-
-const projects: CollectionEntry<"projects">[] = (
-    await getCollection("projects")
-)
-    .filter((project) => !project.data.draft)
-    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-    .slice(0, SITE.NUM_PROJECTS_ON_HOMEPAGE);
-
-
-const shortcuts = [
-  {
-    link: '#',
-    name: 'Eleventy',
-    description: 'Static site generator',
-  },
-  {
-    link: '#',
-    name: 'Alpine.js',
-    description: 'Javascript framework',
-  },
-  {
-    link: '#',
-    name: 'Tailwind CSS',
-    description: 'CSS Templating',
-  },
-  {
-    link: '#',
-    name: 'Eleventy',
-    description: 'Static site generator',
-  },
-];
+const blogPosts = await getBlogPosts();
+const indexPosts = blogPosts.slice(0, site.maxPostsOnIndex);
+const i18n = t(site.language);
+const canonicalUrl = new URL('/', Astro.site).href;
 ---
 
-<Layout title={HOME.TITLE} description={HOME.DESCRIPTION}>
-  <Container>
-    <aside data-pagefind-ignore>
+<BaseLayout title={i18n.pageHome} pageId="index" canonicalUrl={canonicalUrl} hiddenPageTitle>
+  <div class="post-list">
+    {indexPosts.length === 0 ? (
+      <p class="empty-state">{i18n.noPosts}</p>
+    ) : (
+      indexPosts.map((post) => <PostCard post={post} />)
+    )}
+  </div>
 
-
-      <div class="flex flex-col sm:flex-row gap-8">
-        <div class="w-full flex flex-col items-start gap-4">
-          <small class="border-l-4 border-neutral-700 pl-2 mb-4 text-xs font-bold">Done with passion</small>
-          <h1 class="playfair font-bold text-2xl md:text-4xl xl:text-6xl">
-            Build by developers for developers
-          </h1>
-          <p class="text-md text-gray-500">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          </p>
-
-          <div class="w-full max-w-2xl grid grid-cols-1 lg:grid-cols-2 gap-4 my-8 lg:mx-0">
-            {
-              shortcuts.map((shortcut) => (
-                  <a href={shortcut.link} target="_blank" class="p-4 border rounded border-gray-200 hover:border-purple-400 bg-neutral-100">
-                    <h3>{shortcut.name} →</h3>
-                    <p>{shortcut.description}</p>
-                  </a>
-                  <!--<Shortcut entry={shortcut}/>-->
-              ))
-            }
-          </div>
-
-
-        </div>
-      </div>
-
-
-
-        <section class="animate space-y-6">
-          <div class="flex flex-wrap items-center justify-between gap-y-2">
-            <h2 class="font-semibold text-black dark:text-white">
-              Latest posts
-            </h2>
-            <Link href="/blog">
-            See all posts </Link>
-          </div>
-          <ul class="not-prose flex flex-col gap-4">
-              {
-                  blog.map((post) => (
-                    <li>
-                      <ArrowCard entry={post}/>
-                    </li>
-                  ))
-              }
-          </ul>
-        </section>
-
-        <section class="animate space-y-6">
-          <div class="flex flex-wrap items-center justify-between gap-y-2">
-            <h2 class="font-semibold text-black dark:text-white">
-              Recent projects
-            </h2>
-            <Link href="/projects">
-            See all projects </Link>
-          </div>
-          <ul class="not-prose flex flex-col gap-4">
-              {
-                  projects.map((project) => (
-                    <li>
-                      <ArrowCard entry={project}/>
-                    </li>
-                  ))
-              }
-          </ul>
-        </section>
-
-        <section class="animate space-y-4">
-          <h2 class="font-semibold text-black dark:text-white">
-            Let's Connect
-          </h2>
-          <article>
-            <p>
-              If you want to get in touch with me about something or just to say
-              hi, reach out on social media or send me an email.
-            </p>
-          </article>
-          <ul class="not-prose flex flex-wrap gap-2">
-              {
-                  SOCIALS.map((SOCIAL) => (
-                    <li class="flex gap-x-2 text-nowrap">
-                      <Link
-                        href={SOCIAL.HREF}
-                        external
-                        aria-label={`${SITE.TITLE} on ${SOCIAL.NAME}`}
-                      >
-                        {SOCIAL.NAME}
-                      </Link>
-                        {"/"}
-                    </li>
-                  ))
-              }
-            <li class="line-clamp-1">
-              <Link
-                href={`mailto:${SITE.EMAIL}`}
-                aria-label={`Email ${SITE.TITLE}`}
-              >
-                {SITE.EMAIL}
-              </Link>
-            </li>
-          </ul>
-        </section>
-      </div>
-    </aside>
-  </Container>
-</Layout>
+  {blogPosts.length >= site.maxPostsOnIndex && (
+    <div class="read-more-link-area">
+      <a href={siteHref('/archive/')} class="button button-secondary">{i18n.readAllArchive} →</a>
+    </div>
+  )}
+</BaseLayout>

@@ -1,27 +1,50 @@
-import { defineCollection, z } from "astro:content";
+import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
+import { z } from 'astro/zod';
 
-const blog = defineCollection({
-  loader: glob({ pattern: '**/*.{md,mdx}', base: "./src/content/blog" }),
+const posts = defineCollection({
+  loader: glob({ base: './src/content/posts', pattern: '**/*.{md,mdx}' }),
   schema: z.object({
     title: z.string(),
-    description: z.string(),
     date: z.coerce.date(),
-    draft: z.boolean().optional(),
-    tags: z.array(z.string()).optional(),
+    summary: z.string().optional(),
+    tags: z.array(z.string()).default([]),
+    hidden: z.boolean().default(false),
+    draft: z.boolean().default(false),
+
+    cover: z.string().optional(),
   }),
 });
 
-const projects = defineCollection({
-  loader: glob({ pattern: '**/*.{md,mdx}', base: "./src/content/projects" }),
+const pages = defineCollection({
+  loader: glob({ base: './src/content/pages', pattern: '**/*.{md,mdx}' }),
   schema: z.object({
     title: z.string(),
-    description: z.string(),
-    date: z.coerce.date(),
-    draft: z.boolean().optional(),
-    demoURL: z.string().optional(),
-    repoURL: z.string().optional(),
+    date: z.coerce.date().optional(),
+    summary: z.string().optional(),
   }),
 });
 
-export const collections = { blog, projects };
+const tools = defineCollection({
+  loader: glob({ base: './src/content/tools', pattern: '**/*.{md,mdx}' }),
+  schema: z.object({
+    name: z.string(),
+    url: z.string().url(),
+    description: z.string().optional(),
+
+    category: z.enum([
+      'chat',
+      'image',
+      'code',
+      'research',
+      'productivity',
+      'other',
+    ]).default('other'),
+
+    provider: z.string().optional(), // e.g. OpenAI, Google, Anthropic
+    featured: z.boolean().default(false),
+    icon: z.string().optional()
+  }),
+});
+
+export const collections = { posts, pages, tools };
