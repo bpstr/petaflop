@@ -19,5 +19,4 @@ pnpm-debug.log*
 # macOS
 .DS_Store
 
-# local upstream reference (not part of the theme)
-.upstream-aonote/
+.idea
