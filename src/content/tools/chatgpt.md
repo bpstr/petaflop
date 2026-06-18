@@ -1,7 +1,7 @@
 ---
 name: ChatGPT
 url: https://chat.openai.com
-description: AI assistant for writing, coding, and conversation.
+description: AI asszisztens szövegíráshoz, programozáshoz és beszélgetéshez.
 category: chat
 provider: OpenAI
 featured: true

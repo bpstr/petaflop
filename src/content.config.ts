@@ -35,9 +35,14 @@ const tools = defineCollection({
     category: z.enum([
       'chat',
       'image',
+      'design',
+      'music',
       'code',
       'research',
       'productivity',
+      'video',
+      'voice',
+      'writing',
       'other',
     ]).default('other'),
 

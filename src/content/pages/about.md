@@ -1,23 +1,49 @@
 ---
-title: About Aonote
-date: 2025-12-01
-summary: Design goals, scope, and customization for this Astro port of Aonote.
+title: About Petaflop.hu
+date: 2026-06-18
+summary: A Petaflop.hu küldetése, fókusza és szerkesztési alapelvei az AI hírek és eszközök világában.
 ---
 
-This repository is the **Astro branch** of [runsli/Aonote](https://github.com/runsli/Aonote) (`astro-theme-aonote`): it keeps the original visual design and information architecture while using Astro Content Collections for Markdown and a Node toolchain for static builds.
+A **Petaflop.hu** egy mesterséges intelligenciával foglalkozó online magazin, amely az AI világának híreit, eszközeit, trendjeit és gyakorlati felhasználási lehetőségeit mutatja be közérthetően és naprakészen.
 
-Upstream Aonote is a Python static generator; this branch targets authors who want the same reading experience inside the Astro ecosystem.
+Célunk, hogy hidat képezzünk a gyorsan fejlődő AI-technológiák és a mindennapi felhasználók, fejlesztők, valamint döntéshozók között.
 
-## Design principles
+## Szerkesztési elvek
 
-- **Content first:** Clear hierarchy for prose, code blocks, and tables.
-- **Static output:** HTML and CSS only—no client-side runtime required for reading.
-- **Maintainable:** Posts live in Markdown, styles in CSS, settings in `src/site.config.ts`.
-- **Easy to deploy:** Ship the `dist/` folder to Vercel, Netlify, GitHub Pages, or any static host.
+- **Emberközpontú AI-tartalom:** A technológiai híreket érthető, kontextusba helyezett formában közöljük.
+- **Gyors és releváns frissítések:** A mesterséges intelligencia területén zajló változásokat folyamatosan követjük.
+- **Gyakorlati fókusz:** Nem csak híreket közlünk, hanem eszközöket, workflow-okat és valós felhasználási példákat is bemutatunk.
+- **Független szemlélet:** Kritikus és kiegyensúlyozott megközelítést alkalmazunk az AI hype és valóság között.
 
-## Customization
+## Tartalmi fókusz
 
-1. Edit site title, description, author, and `baseUrl` in `src/site.config.ts`.
-2. Add or replace posts under `src/content/posts/`.
-3. Adjust `src/styles/aonote.css` as needed.
-4. Run `npm run build` and preview `dist/`.
+A Petaflop.hu fő témái:
+
+- AI hírek és iparági fejlemények
+- Nagy nyelvi modellek (LLM-ek) és alkalmazásaik
+- Generatív AI (szöveg, kép, videó, hang)
+- Fejlesztői eszközök és API-k
+- AI-alapú produktivitási megoldások
+- Etikai, társadalmi és gazdasági hatások
+
+## Célközönség
+
+A Petaflop.hu tartalmai azoknak szólnak, akik:
+
+- szeretnék megérteni az AI működését és hatásait,
+- használják vagy integrálják az AI-t a munkájukba,
+- érdeklődnek a technológiai trendek iránt,
+- vagy egyszerűen szeretnének naprakészek maradni egy gyorsan változó világban.
+
+## Fejlesztési irányok
+
+A jövőben a Petaflop.hu célja:
+
+- interaktív AI-eszközök bemutatása,
+- gyakorlati tutorialok és workflow-leírások bővítése,
+- közösségi tudásmegosztás erősítése,
+- valamint egy letisztult, gyors és fókuszált olvasói élmény fenntartása.
+
+---
+
+A Petaflop.hu egyszerre hírportál, tudástár és inspirációs felület – az AI korszak mindennapi értelmezéséhez.
