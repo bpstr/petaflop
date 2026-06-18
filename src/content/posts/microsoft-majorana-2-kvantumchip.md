@@ -5,7 +5,7 @@ summary: "A Majorana 2 nevű kvantumchip kvbitjei akár egy percig is megtartjá
 tags: ["kvantumszámítás", "Microsoft", "hardver", "AI"]
 hidden: false
 draft: false
-cover: ""
+cover: "/static/posts/Majorana-2-web-size_4_cropped.jpg"
 ---
 
 A Microsoft június 2-án mutatta be a Majorana 2 kvantumchipet, a 2025 februárjában bejelentett Majorana 1 utódját. A cég állítása szerint a chip stabilitása ezerszer jobb az elődjénél, és ez jelentősen felgyorsíthatja a hasznosítható kvantumszámítógépek megjelenését.
