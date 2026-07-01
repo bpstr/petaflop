@@ -1,6 +1,7 @@
 ---
 title: "Megérkezett a Claude Opus 4.8"
 date: 2026-05-28
+category: kiadasok
 summary: "Az Anthropic rekordsebességgel adta ki Opus modelljének új verzióját, amely jobb ítélőképességgel, olcsóbb gyors móddal és egy új 'dinamikus munkafolyamat' funkcióval érkezett."
 tags: ["AI", "Anthropic", "Claude", "modellek"]
 hidden: false

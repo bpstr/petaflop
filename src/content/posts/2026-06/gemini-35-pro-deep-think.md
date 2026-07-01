@@ -1,6 +1,7 @@
 ---
 title: "Gemini 3.5 Pro Deep Think a Vertexen"
 date: 2026-06-22
+category: kiadasok
 summary: "A Google megkezdte a Gemini 3.5 Pro bevezetését a Vertex AI vállalati ügyfeleinek: kétmillió tokenes kontextus és Deep Think gondolkodási mód jellemzi, általános elérhetősége júniusra várható."
 tags: ["AI", "Google", "Gemini", "modellek", "Deep Think"]
 draft: false

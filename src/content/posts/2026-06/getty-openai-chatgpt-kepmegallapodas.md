@@ -1,6 +1,7 @@
 ---
 title: "Getty képei megjelennek a ChatGPT-ben"
 date: 2026-06-21
+category: hirek
 summary: "A Getty Images többéves megjelenítési megállapodást kötött az OpenAI-jal: licencelt fotói mostantól közvetlenül a ChatGPT keresési találatai között bukkannak fel, miközben a részvény az egekbe szökött."
 tags: ["AI", "OpenAI", "Getty Images", "ChatGPT", "üzlet"]
 draft: false

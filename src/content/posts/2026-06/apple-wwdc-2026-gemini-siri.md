@@ -1,6 +1,7 @@
 ---
 title: "Apple Siri mostantól Geminit használ"
 date: 2026-06-09
+category: hirek
 summary: "Az Apple WWDC 2026-on bejelentette az átdolgozott Siri-t, amelyet a Google Gemini hajt, miközben Claude és ChatGPT is választható AI-partnerré válik iPhone-on."
 tags: ["Apple", "Siri", "Gemini", "WWDC", "AI", "iPhone"]
 draft: false

@@ -1,6 +1,7 @@
 ---
 title: "A Google bemutatta a Gemini Omnit"
 date: 2026-05-21
+category: kiadasok
 summary: "A Google I/O 2026 legnagyobb bejelentése a Gemini Omni, amely szöveget, képet, hangot és videót egyszerre tud felhasználni, valamint a Gemini 3.5 Flash, az új ügynöki és kódolási modell."
 tags: ["AI", "Google", "Gemini", "videógenerálás"]
 hidden: false

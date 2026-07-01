@@ -1,6 +1,7 @@
 ---
 title: "OpenAI GeneBench-Pro a biológiát méri"
 date: 2026-07-01
+category: tesztek
 summary: "Az OpenAI kiadta a GeneBench-Pro tesztet, amely 129 valósághűen zajos feladaton méri, mennyire képesek az AI-ágensek helyes döntéseket hozni a komputációs biológia nehéz problémáiban."
 tags: ["AI", "OpenAI", "benchmark", "biológia", "kutatás"]
 draft: false

@@ -1,6 +1,7 @@
 ---
 title: "Alphabet 84,75 milliárd dollárt gyűjt AI-ra"
 date: 2026-06-02
+category: hirek
 summary: "Az Alphabet lezárta a vállalat történetének legnagyobb tőkebevonását: 84,75 milliárd dollárt gyűjtött AI-infrastruktúrára, ebből 10 milliárdot Warren Buffett Berkshire Hathaway-je adott."
 tags: ["AI", "Google", "Alphabet", "infrastruktúra", "befektetés"]
 draft: false

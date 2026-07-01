@@ -1,6 +1,7 @@
 ---
 title: "Gemini 3.5 Flash átveszi az irányítást"
 date: 2026-07-01
+category: kiadasok
 summary: "A Google natívan beépítette a számítógép-vezérlést a Gemini 3.5 Flash modellbe: egyetlen ágens képes böngészőn, mobilon és asztali gépen is látni, gondolkodni és cselekedni."
 tags: ["AI", "Google", "Gemini", "ágensek", "automatizálás"]
 draft: false

@@ -1,6 +1,7 @@
 ---
 title: "Luma Ray3.2: irányíthatóbb AI-videó"
 date: 2026-06-09
+category: kiadasok
 summary: A Luma bemutatta a Ray3.2 modellt és API-t, amely kockánként irányítható, profi minőségű AI-videógenerálást kínál.
 tags: [AI, videógenerálás, Luma]
 ---

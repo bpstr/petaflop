@@ -1,6 +1,7 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 import { siteHref } from './paths';
 import { tagToSlug } from './slug';
+import { CATEGORIES, categoryUrl, type CategorySlug } from './categories';
 
 export type Post = CollectionEntry<'posts'>;
 
@@ -40,6 +41,27 @@ export function postUrl(post: Post): string {
 
 export function tagUrl(tag: string): string {
   return siteHref(`/tags/${tagToSlug(tag)}/`);
+}
+
+export function postCategory(post: Post): CategorySlug {
+  return post.data.category;
+}
+
+export function postCategoryUrl(post: Post): string {
+  return categoryUrl(post.data.category);
+}
+
+/** Posts in a category, most recent first (input should already be sorted). */
+export function getPostsByCategory(posts: Post[], slug: string): Post[] {
+  return posts.filter((post) => post.data.category === slug);
+}
+
+/** Category slug → post count, following the canonical category order. */
+export function getCategoryCounts(posts: Post[]): { slug: CategorySlug; count: number }[] {
+  return CATEGORIES.map((category) => ({
+    slug: category.slug,
+    count: posts.filter((post) => post.data.category === category.slug).length,
+  }));
 }
 
 export function getAllTags(posts: Post[]): string[] {

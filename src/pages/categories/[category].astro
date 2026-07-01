@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+import { site } from '../../site.config';
+import { t } from '../../i18n';
+import { absoluteUrl, siteHref } from '../../utils/paths';
+import { getBlogPosts, getPostsByCategory } from '../../utils/posts';
+import { CATEGORIES } from '../../utils/categories';
+
+export async function getStaticPaths() {
+  const blogPosts = await getBlogPosts();
+  return CATEGORIES.map((category) => ({
+    params: { category: category.slug },
+    props: {
+      category,
+      posts: getPostsByCategory(blogPosts, category.slug),
+    },
+  }));
+}
+
+const { category, posts } = Astro.props;
+const i18n = t(site.language);
+const canonicalUrl = absoluteUrl(`/categories/${category.slug}/`);
+---
+
+<BaseLayout
+  title={category.label}
+  description={category.description}
+  pageId="category"
+  canonicalUrl={canonicalUrl}
+  activeCategory={category.slug}
+>
+  <div class="tag-meta-info">
+    <h1 class="page-list-title">{category.label}</h1>
+    <p class="category-description">{category.description}</p>
+    <p class="tag-count">{i18n.categoryPostCount(posts.length)}</p>
+    <a href={siteHref('/categories/')} class="button button-secondary button-small">← {i18n.allCategories}</a>
+  </div>
+  <hr class="section-divider" />
+  <div class="post-list">
+    {posts.length === 0 ? (
+      <p class="empty-state">{i18n.noPosts}</p>
+    ) : (
+      posts.map((post) => <PostCard post={post} />)
+    )}
+  </div>
+</BaseLayout>

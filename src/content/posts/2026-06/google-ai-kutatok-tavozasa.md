@@ -1,6 +1,7 @@
 ---
 title: "Újabb AI-kutatók hagyják el a Google-t"
 date: 2026-06-24
+category: hirek
 summary: "Két kulcsfontosságú Gemini-fejlesztő is az Anthropichoz távozik, folytatva a Google-ból induló tehetségelvándorlást, miközben az OpenAI és az Anthropic tőzsdei bevezetésre készül."
 tags: ["AI", "Google", "Anthropic", "OpenAI", "munkaerőpiac"]
 draft: false

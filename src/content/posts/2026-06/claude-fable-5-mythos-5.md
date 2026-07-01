@@ -1,6 +1,7 @@
 ---
 title: "Claude Fable 5 és Mythos 5 itt van"
 date: 2026-06-09
+category: kiadasok
 summary: "Az Anthropic bemutatja a Claude Fable 5-öt – a Mythos modell első nyilvánosan elérhető verzióját –, és a korlátozott hozzáférésű Mythos 5-öt, amelyek együtt egy teljesen új képességi szintet képviselnek."
 tags: ["AI", "Anthropic", "Claude", "Fable", "Mythos", "modellek"]
 draft: false

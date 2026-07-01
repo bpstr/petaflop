@@ -1,6 +1,7 @@
 ---
 title: "ChatGPT 5x okosabb memóriát kap"
 date: 2026-06-04
+category: kiadasok
 summary: "Az OpenAI elindítja a Dreaming V3 architektúrát: a ChatGPT mostantól automatikusan, háttérben szintetizálja az összes korábbi beszélgetést, és önállóan frissíti az emlékeit."
 tags: ["AI", "OpenAI", "ChatGPT", "memória", "Dreaming"]
 draft: false

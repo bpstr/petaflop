@@ -1,6 +1,7 @@
 ---
 title: "Megjelent a Claude Science kutatóknak"
 date: 2026-07-01
+category: kiadasok
 summary: "Az Anthropic bemutatta a Claude Science alkalmazást, amely a kutatók számára készült, több mint 60 tudományos adatbázissal, natív tudományos vizualizációval és a Claude Opus 4.8 modell erejével."
 tags: ["AI", "Anthropic", "Claude", "tudomány", "kutatás"]
 draft: false

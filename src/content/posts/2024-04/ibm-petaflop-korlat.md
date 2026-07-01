@@ -1,6 +1,7 @@
 ---
 title: "Az IBM Roadrunnere áttörte a petaflop-korlátot"
 date: 2024-04-12
+category: elemzesek
 summary: "Az IBM Roadrunnere volt az első gép, amely elérte a kvadrillió számítás/másodperc sebességet – és ezzel új korszakot nyitott a szuperszámítástechnikában."
 tags: ["szuperszámítógép", "IBM", "történelem", "technológia"]
 hidden: false

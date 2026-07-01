@@ -1,6 +1,7 @@
 ---
 title: Valós idejű videóhívás AI-agensekkel
 date: 2026-04-02
+category: kiadasok
 summary: A Pika bemutatta a PikaStream1.0-t, amely lehetővé teszi, hogy bármely AI-ágensssel élő videóhívást folytassunk – mindössze 1,5 másodperces késleltetéssel, egyetlen GPU-n.
 tags: [AI, videogenerálás, pika, real-time, ai-agens]
 draft: false

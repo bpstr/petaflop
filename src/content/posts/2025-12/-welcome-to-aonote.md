@@ -1,6 +1,7 @@
 ---
 title: Welcome to Aonote
 date: 2025-12-01
+category: utmutatok
 summary: What astro-theme-aonote is, what it includes, and how to get started.
 tags: [intro]
 draft: true

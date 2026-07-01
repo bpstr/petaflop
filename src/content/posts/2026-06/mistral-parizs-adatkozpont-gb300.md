@@ -1,6 +1,7 @@
 ---
 title: "Mistral elindítja párizsi szuperadatközpontját"
 date: 2026-06-23
+category: hirek
 summary: "A Mistral AI a hónap végén üzembe helyezi Párizs melletti adatközpontját 13 800 Nvidia GB300 GPU-val – Európa eddigi legnagyobb AI-célú hitelfinanszírozásából."
 tags: ["AI", "Mistral", "adatközpont", "Nvidia", "Európa"]
 draft: false

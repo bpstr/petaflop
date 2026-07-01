@@ -1,6 +1,7 @@
 ---
 title: Luma Concepts irányítja a kameramozgást
 date: 2025-03-31
+category: kiadasok
 summary: A Luma új Concepts technológiája pár példából tanulja meg és kombinálja a kameramozgásokat a Ray2 videógeneráló modellben.
 tags: [AI, video, Luma, generativ-ai]
 ---

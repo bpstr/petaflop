@@ -1,6 +1,7 @@
 ---
 title: "Az OpenAI leállítja a Sorát"
 date: 2026-04-26
+category: hirek
 summary: "A 2025 legnagyobb AI-szenzációjának számító videógeneráló alkalmazás 2026 áprilisában megszűnt, az API pedig szeptemberben kapcsol ki véglegesen – közben a minőségi rangsor élére kínai modellek kerültek."
 tags: ["AI", "OpenAI", "videógenerálás", "Sora"]
 hidden: false

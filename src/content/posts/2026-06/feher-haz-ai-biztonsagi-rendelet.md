@@ -1,6 +1,7 @@
 ---
 title: "Fehér Ház rendelete a határmodellekről"
 date: 2026-06-02
+category: hirek
 summary: "Az amerikai kormány elnöki rendeletet adott ki a fejlett AI innovációjáról és biztonságáról, amely önkéntes keretrendszert állít fel a határmodellek kiadására és megerősíti a kibervédelmet."
 tags: ["AI", "szabályozás", "USA", "biztonság", "kiberbiztonság"]
 draft: false

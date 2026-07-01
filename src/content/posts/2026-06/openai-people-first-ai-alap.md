@@ -1,6 +1,7 @@
 ---
 title: "OpenAI 50 millió dolláros civil alapot indít"
 date: 2026-06-24
+category: hirek
 summary: "Az OpenAI Foundation 50 millió dolláros People-First AI Fund néven támogatási programot indított amerikai nonprofit szervezeteknek, amelyek az AI-t közösségi célokra használják."
 tags: ["AI", "OpenAI", "nonprofit", "társadalom", "támogatás"]
 draft: false

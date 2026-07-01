@@ -1,6 +1,7 @@
 ---
 title: Tables and native components
 date: 2026-01-12
+category: utmutatok
 summary: Simple and wide tables, scroll regions, and native details/summary.
 tags: [basic, markdown]
 draft: true

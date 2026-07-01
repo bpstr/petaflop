@@ -1,6 +1,7 @@
 ---
 title: AI szinkronizálás kép alapján
 date: 2025-12-01
+category: kiadasok
 summary: Az ElevenLabs új Lip Sync eszköze fotókat alakít beszélő videókká AI hang és szájmozgás-szinkronizálás segítségével.
 tags: [AI, video, elevenlabs]
 ---

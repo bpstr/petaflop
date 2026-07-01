@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { site } from '../../site.config';
+import { t } from '../../i18n';
+import { absoluteUrl } from '../../utils/paths';
+import { getBlogPosts, getCategoryCounts } from '../../utils/posts';
+import { getCategory, categoryUrl } from '../../utils/categories';
+
+const blogPosts = await getBlogPosts();
+const counts = getCategoryCounts(blogPosts);
+const i18n = t(site.language);
+const canonicalUrl = absoluteUrl('/categories/');
+---
+
+<BaseLayout title={i18n.pageCategories} pageId="categories" canonicalUrl={canonicalUrl} hiddenPageTitle>
+  <h1>{i18n.categoriesHeading}</h1>
+  {counts.length === 0 ? (
+    <p class="empty-state">{i18n.noCategories}</p>
+  ) : (
+    <div class="category-grid">
+      {counts.map(({ slug, count }) => {
+        const category = getCategory(slug)!;
+        return (
+          <a class="category-card" href={categoryUrl(slug)}>
+            <div class="category-card-head">
+              <h2 class="category-card-title">{category.label}</h2>
+              <span class="category-card-count">{count}</span>
+            </div>
+            <p class="category-card-desc">{category.description}</p>
+          </a>
+        );
+      })}
+    </div>
+  )}
+</BaseLayout>

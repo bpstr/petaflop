@@ -1,6 +1,7 @@
 ---
 title: Code blocks and media examples
 date: 2026-01-11
+category: utmutatok
 summary: Images, admonitions, fenced code, titles, line highlights, diff highlights, and long lines.
 tags: [basic, markdown, code]
 draft: true

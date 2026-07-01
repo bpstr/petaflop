@@ -1,6 +1,7 @@
 ---
 title: "A SpaceX 60 milliárdért megveszi a Cursort"
 date: 2026-06-16
+category: hirek
 summary: "A SpaceX 60 milliárd dolláros, teljesen részvényalapú megállapodással felvásárolja a Cursor AI-kódszerkesztőt – ez minden idők legnagyobb kockázatitőke-hátterű startup-akvizíciója."
 tags: ["AI", "SpaceX", "Cursor", "üzlet", "felvásárlás"]
 draft: false

@@ -1,6 +1,7 @@
 ---
 title: "OpenAI Daybreak véd a hibák ellen"
 date: 2026-06-22
+category: kiadasok
 summary: "Az OpenAI kibővítette Daybreak kiberbiztonsági programját egy erősebb GPT-5.5-Cyber modellel, a Codex Security bővítménnyel és a nyílt forráskódot foltozó Patch the Planet kezdeményezéssel."
 tags: ["AI", "OpenAI", "kiberbiztonság", "GPT-5.5", "Codex"]
 draft: false

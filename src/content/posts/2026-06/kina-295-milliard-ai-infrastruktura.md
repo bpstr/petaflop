@@ -1,6 +1,7 @@
 ---
 title: "Kína 295 milliárdot szán AI-hálózatra"
 date: 2026-06-12
+category: hirek
 summary: "Kína ötéves, 295 milliárd dolláros tervet készít elő egy egységes nemzeti számítási hálózat kiépítésére, amely 80 százalékban hazai chipekre épülne – kiszorítva az Nvidiát."
 tags: ["AI", "Kína", "infrastruktúra", "chipek", "adatközpont"]
 draft: false

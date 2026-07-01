@@ -1,6 +1,7 @@
 ---
 title: "A Microsoft ezerszer stabilabb kvantumchipet épített"
 date: 2026-06-02
+category: kiadasok
 summary: "A Majorana 2 nevű kvantumchip kvbitjei akár egy percig is megtartják állapotukat a korábbi ezredmásodperces értékek helyett, és a Microsoft szerint ez 2029-re elérhetővé tehet egy hasznosítható kvantumszámítógépet."
 tags: ["kvantumszámítás", "Microsoft", "hardver", "AI"]
 hidden: false

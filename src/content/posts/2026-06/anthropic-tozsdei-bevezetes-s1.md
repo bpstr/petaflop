@@ -1,6 +1,7 @@
 ---
 title: "Anthropic tőzsdére készül 965 milliárdért"
 date: 2026-06-01
+category: hirek
 summary: "Az Anthropic bizalmasan benyújtotta S-1 dokumentumát a SEC-hez: a cég 965 milliárd dolláros értékelés mellett, októberi tőzsdei bevezetést céloz, 47 milliárd dolláros éves bevételi futamszint mellett."
 tags: ["AI", "Anthropic", "tőzsde", "IPO", "üzlet"]
 draft: false

@@ -1,6 +1,7 @@
 ---
 title: "Microsoft saját AI-modelleket épít"
 date: 2026-06-02
+category: kiadasok
 summary: "A Microsoft Build 2026-on hét házilagos MAI-modellt mutatott be – szövegtől képen és hangon át átírásig –, hogy csökkentse az OpenAI-tól való függőségét."
 tags: ["AI", "Microsoft", "MAI", "Azure", "modellek", "Build"]
 draft: false

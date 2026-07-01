@@ -1,6 +1,7 @@
 ---
 title: "Az Anthropic benyújtotta IPO-kérelmét"
 date: 2026-06-01
+category: hirek
 summary: "A Claude-ot fejlesztő Anthropic bizalmas tőkepiaci regisztrációs dokumentumot nyújtott be az amerikai értékpapír-felügyeletnek, megelőzve ezzel rivális versenytársát, az OpenAI-t."
 tags: ["AI", "Anthropic", "üzlet", "IPO"]
 hidden: false

@@ -3,6 +3,7 @@ import '../styles/style.css';
 import { site } from '../site.config';
 import { siteHref } from '../utils/paths';
 import { t, type Locale } from '../i18n';
+import { CATEGORIES, categoryUrl } from '../utils/categories';
 
 interface Props {
   title: string;
@@ -15,6 +16,8 @@ interface Props {
   /** ISO date for article Open Graph (post pages). */
   articlePublishedTime?: string;
   ogImage?: string;
+  /** Category slug to highlight in the section bar (category + post pages). */
+  activeCategory?: string;
 }
 
 const {
@@ -26,6 +29,7 @@ const {
   hiddenPageTitle = false,
   articlePublishedTime,
   ogImage = '',
+  activeCategory,
 } = Astro.props;
 
 const locale = site.language as Locale;
@@ -48,6 +52,7 @@ function navCurrent(path: string) {
   if (normalized === '/tools/') return pageId === 'tools';
   if (normalized === '/archive/') return pageId === 'archive';
   if (normalized === '/tags/') return pageId === 'tags';
+  if (normalized === '/categories/') return pageId === 'categories';
   return normalizePath(currentPath) === href;
 }
 ---
@@ -101,10 +106,12 @@ function navCurrent(path: string) {
     <a href="#main-content" class="skip-link">{i18n.skipToContent}</a>
 
     <header>
+
       <div class="header-inner">
         <a href={homeHref} class="site-title">{site.title}</a>
         <nav class="desktop-nav" aria-label={i18n.mainNavigation}>
           <a href={siteHref('/')} aria-current={navCurrent('/') ? 'page' : undefined}>{i18n.navHome}</a>
+          <a href={siteHref('/categories/')} aria-current={navCurrent('/categories') ? 'page' : undefined}>{i18n.navCategories}</a>
           <a href={siteHref('/tools/')} aria-current={navCurrent('/tools') ? 'page' : undefined}>{i18n.navTools}</a>
           <a href={siteHref('/archive/')} aria-current={navCurrent('/archive') ? 'page' : undefined}>{i18n.navArchive}</a>
           <a href={siteHref('/tags/')} aria-current={navCurrent('/tags') ? 'page' : undefined}>{i18n.navTags}</a>
@@ -117,6 +124,7 @@ function navCurrent(path: string) {
           </summary>
           <nav class="mobile-nav-links" aria-label={i18n.mainNavigation}>
             <a href={siteHref('/')} aria-current={navCurrent('/') && pageId === 'index' ? 'page' : undefined}>{i18n.navHome}</a>
+            <a href={siteHref('/categories/')} aria-current={navCurrent('/categories') ? 'page' : undefined}>{i18n.navCategories}</a>
             <a href={siteHref('/tools/')} aria-current={navCurrent('/tools') ? 'page' : undefined}>{i18n.navTools}</a>
             <a href={siteHref('/archive/')} aria-current={navCurrent('/archive') ? 'page' : undefined}>{i18n.navArchive}</a>
             <a href={siteHref('/tags/')} aria-current={navCurrent('/tags') ? 'page' : undefined}>{i18n.navTags}</a>
@@ -124,7 +132,22 @@ function navCurrent(path: string) {
           </nav>
         </details>
       </div>
+      <div class="header-bottom">
+        <nav class="category-nav" aria-label={i18n.categoryNavLabel}>
+          <div class="category-nav-inner">
+            {CATEGORIES.map((category) => (
+                <a
+                    href={categoryUrl(category.slug)}
+                    aria-current={activeCategory === category.slug ? 'page' : undefined}
+                >
+                  {category.label}
+                </a>
+            ))}
+          </div>
+        </nav>
+      </div>
     </header>
+
 
     <main id="main-content">
       <div class="main-layout">

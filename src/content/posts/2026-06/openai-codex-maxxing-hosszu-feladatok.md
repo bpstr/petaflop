@@ -1,6 +1,7 @@
 ---
 title: "OpenAI Codex-maxxing hosszú feladatokra"
 date: 2026-06-22
+category: kiadasok
 summary: "Az OpenAI gyakorlati útmutatót adott ki, amely megmutatja, hogyan használható a Codex tartós munkafelületként: a kulcs a feladatok lebontása ellenőrizhető lépésekre és a folyamatos kontextus megőrzése."
 tags: ["AI", "OpenAI", "Codex", "fejlesztés", "ügynökök"]
 draft: false

@@ -1,6 +1,7 @@
 ---
 title: "OpenAI GPT-5.6 zárt körben indul"
 date: 2026-06-26
+category: kiadasok
 summary: "Az OpenAI korlátozott előzetesben mutatta be a GPT-5.6 Sol, Terra és Luna modelleket, amelyeket egyelőre csak mintegy húsz, az amerikai kormány által jóváhagyott partner érhet el."
 tags: ["AI", "OpenAI", "GPT-5.6", "modell", "biztonság"]
 draft: false

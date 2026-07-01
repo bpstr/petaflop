@@ -1,6 +1,7 @@
 ---
 title: "Feloldották a Claude Fable 5 és Mythos 5 exportkorlátozását"
 date: 2026-07-01
+category: hirek
 summary: "Az amerikai Kereskedelmi Minisztérium 18 nap után feloldotta a Claude Fable 5 és Mythos 5 modellekre kivetett exportkorlátozást, miután az Anthropic megállapodott a kormányzattal a biztonsági kockázatok kezeléséről."
 tags: ["AI", "Anthropic", "Claude", "szabályozás", "USA"]
 hidden: false

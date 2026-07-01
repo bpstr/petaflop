@@ -1,6 +1,7 @@
 ---
 title: "Claude Sonnet 5 olcsóbban futtat ágenseket"
 date: 2026-06-30
+category: kiadasok
 summary: "Az Anthropic kiadta a Claude Sonnet 5 modellt, amely közel Opus-szintű teljesítményt nyújt lényegesen alacsonyabb áron, kifejezetten az autonóm AI-ágensek költséghatékony futtatására."
 tags: ["AI", "Anthropic", "Claude", "ágensek", "modell"]
 draft: false

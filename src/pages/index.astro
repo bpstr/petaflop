@@ -3,8 +3,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { site } from '../site.config';
 import { t } from '../i18n';
 import { siteHref } from '../utils/paths';
-import { formatDate, getAllTags, getBlogPosts, postUrl, tagUrl } from '../utils/posts';
+import { formatDate, getAllTags, getBlogPosts, getPostsByCategory, postUrl, tagUrl } from '../utils/posts';
 import { badgeClass, featureCardClass } from '../utils/badge';
+import { CATEGORIES, categoryUrl } from '../utils/categories';
+import PostCard from "../components/PostCard.astro";
 
 const blogPosts = await getBlogPosts();
 const indexPosts = blogPosts.slice(0, site.maxPostsOnIndex);
@@ -16,6 +18,11 @@ const featuredPosts = remainingPosts.slice(0, 2);
 const briefingPosts = remainingPosts.slice(2, 6);
 const coverPosts = blogPosts.filter((post) => post.data.cover).slice(0, 2);
 const allTags = getAllTags(blogPosts).slice(0, 10);
+/** Homepage sections: each category with its latest posts (skip empty ones). */
+const categorySections = CATEGORIES.map((category) => ({
+  category,
+  posts: getPostsByCategory(blogPosts, category.slug).slice(0, 4),
+})).filter((section) => section.posts.length > 0);
 const latestDate = leadPost ? formatDate(leadPost.data.date, locale) : '';
 const leadUrl = leadPost ? postUrl(leadPost) : siteHref('/archive/');
 const leadTags = leadPost?.data.tags.slice(0, 3) ?? [];
@@ -106,19 +113,7 @@ const secondaryVisual = coverPosts[1];
         </div>
         <div class="divide-y divide-hairline border-b border-hairline dark:divide-[#2a3a3a] dark:border-[#2a3a3a]">
           {briefingPosts.map((post) => (
-            <article class="grid gap-2 py-3 sm:grid-cols-[140px_minmax(0,1fr)]">
-              <time class="text-sm text-muted dark:text-on-dark-soft" datetime={post.data.date.toISOString()}>
-                {formatDate(post.data.date, locale)}
-              </time>
-              <div>
-                <a href={postUrl(post)} class="group no-underline">
-                  <h3 class="m-0 text-lg font-medium leading-tight tracking-tight group-hover:!text-accent dark:group-hover:!text-brand-mint">
-                    {post.data.title}
-                  </h3>
-                </a>
-                {post.data.summary && <p class="mt-1 text-sm leading-6 text-body dark:text-on-dark-soft">{post.data.summary}</p>}
-              </div>
-            </article>
+              <PostCard post={post} />
           ))}
         </div>
 
@@ -145,6 +140,33 @@ const secondaryVisual = coverPosts[1];
           </div>
         </div>
       </section>
+
+      {categorySections.map(({ category, posts }) => (
+        <section class="border-t border-hairline py-6 dark:border-[#2a3a3a] md:py-8">
+          <div class="mb-3 flex items-end justify-between gap-4 border-b border-hairline pb-3 dark:border-[#2a3a3a]">
+            <div>
+              <h2 class="m-0 text-xl font-medium tracking-tight">{category.label}</h2>
+              <p class="mt-1 text-sm leading-6 text-muted dark:text-on-dark-soft">{category.description}</p>
+            </div>
+            <a href={categoryUrl(category.slug)} class="shrink-0 text-sm font-medium no-underline">{i18n.allCategories} →</a>
+          </div>
+          <div class="grid gap-4 sm:grid-cols-2">
+            {posts.map((post) => (
+              <article class="rounded-lg border border-hairline bg-white p-4 dark:border-[#2a3a3a] dark:bg-surface-dark-elevated">
+                <time class="text-xs text-muted dark:text-on-dark-soft" datetime={post.data.date.toISOString()}>
+                  {formatDate(post.data.date, locale)}
+                </time>
+                <a href={postUrl(post)} class="group no-underline">
+                  <h3 class="mt-1 text-lg font-medium leading-tight tracking-tight group-hover:!text-accent dark:group-hover:!text-brand-mint">
+                    {post.data.title}
+                  </h3>
+                </a>
+                {post.data.summary && <p class="mt-1 text-sm leading-6 text-body dark:text-on-dark-soft">{post.data.summary}</p>}
+              </article>
+            ))}
+          </div>
+        </section>
+      ))}
     </div>
   )}
 

@@ -1,6 +1,7 @@
 ---
 title: "GLM-5.2 nyíltan veri a GPT-5.5-öt"
 date: 2026-06-17
+category: kiadasok
 summary: "A Z.ai (korábban Zhipu) MIT-licenc alatt nyílttá tette GLM-5.2 modelljét, amely kódolásban megelőzi a GPT-5.5-öt, és egymillió tokenes kontextusablakkal érkezik."
 tags: ["AI", "GLM", "nyílt forráskód", "modellek", "Kína"]
 draft: false

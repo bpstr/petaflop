@@ -1,6 +1,7 @@
 ---
 title: "MiniMax-M3 olcsón veri a topmodelleket"
 date: 2026-06-01
+category: kiadasok
 summary: "A sanghaji MiniMax kiadta nyílt súlyú M3 modelljét, amely több kulcsmércén megelőzi a GPT-5.5-öt és a Gemini 3.1 Prót – a költségek mindössze töredékéért."
 tags: ["AI", "MiniMax", "nyílt forráskód", "modellek", "Kína"]
 draft: false

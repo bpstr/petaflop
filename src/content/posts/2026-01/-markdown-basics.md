@@ -1,6 +1,7 @@
 ---
 title: Markdown showcase
 date: 2026-01-10
+category: utmutatok
 summary: A polished tour of headings, text, code, tables, media, math, quotes, and footnotes.
 tags: [basic, markdown]
 draft: true

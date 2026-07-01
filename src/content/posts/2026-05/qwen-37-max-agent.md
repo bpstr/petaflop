@@ -1,6 +1,7 @@
 ---
 title: "Egy AI modell 35 órán át dolgozott egyetlen feladaton – emberi felügyelet nélkül"
 date: 2026-05-20
+category: kiadasok
 summary: "Az Alibaba Qwen 3.7 Max nevű modellje egy GPU-kód optimalizálásán dolgozott majdnem két napig, több mint ezer egymást követő lépésben, és a végén tízszeres sebességnövekedést ért el."
 tags: ["AI", "Alibaba", "Qwen", "ügynökök"]
 hidden: false

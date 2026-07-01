@@ -1,6 +1,7 @@
 ---
 title: "Samsung bevezeti a ChatGPT-t dolgozóinál"
 date: 2026-06-21
+category: hirek
 summary: "A Samsung Electronics globálisan bevezeti a ChatGPT Enterprise-t és a Codexet munkatársai körében – ez az OpenAI egyik legnagyobb vállalati telepítése, és teljes fordulat a cég 2023-as AI-tilalmához képest."
 tags: ["AI", "OpenAI", "Samsung", "ChatGPT", "vállalati"]
 draft: false

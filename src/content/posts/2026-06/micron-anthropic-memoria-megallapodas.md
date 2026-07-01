@@ -1,6 +1,7 @@
 ---
 title: "Micron és Anthropic memóriaszövetséget köt"
 date: 2026-06-22
+category: hirek
 summary: "A Micron és az Anthropic stratégiai megállapodást jelentett be: a memóriagyártó HBM-, DRAM- és SSD-portfólióját a Claude modellek igényeihez hangolják, és a Micron beszáll az Anthropic H sorozatú körébe."
 tags: ["AI", "Anthropic", "Micron", "infrastruktúra", "HBM"]
 draft: false
