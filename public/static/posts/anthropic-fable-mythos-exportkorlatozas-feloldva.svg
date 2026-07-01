@@ -1,0 +1,51 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>Feloldott exportkorlátozás</title>
+<desc>Stilizált illusztráció egy nyitott lakatról és AI-áramköri mintázatról, ami a Claude Fable 5 és Mythos 5 modellek exportkorlátozásának feloldására utal.</desc>
+<rect x="0" y="0" width="1200" height="630" fill="#f7f7f4"/>
+
+<g opacity="0.5" stroke="#b2dfdb" stroke-width="2">
+<line x1="0" y1="120" x2="1200" y2="120"/>
+<line x1="0" y1="510" x2="1200" y2="510"/>
+<circle cx="120" cy="120" r="5" fill="#b2dfdb" stroke="none"/>
+<circle cx="1080" cy="120" r="5" fill="#b2dfdb" stroke="none"/>
+<circle cx="120" cy="510" r="5" fill="#b2dfdb" stroke="none"/>
+<circle cx="1080" cy="510" r="5" fill="#b2dfdb" stroke="none"/>
+<path d="M120 120 L120 220" fill="none"/>
+<path d="M1080 120 L1080 220" fill="none"/>
+<path d="M120 510 L120 410" fill="none"/>
+<path d="M1080 510 L1080 410" fill="none"/>
+</g>
+
+<g transform="translate(150,180)">
+<rect x="0" y="80" width="260" height="220" rx="16" fill="#ffffff" stroke="#004d40" stroke-width="3"/>
+<rect x="20" y="110" width="220" height="18" rx="4" fill="#e0f2f1"/>
+<rect x="20" y="145" width="220" height="14" rx="4" fill="#e0f2f1"/>
+<rect x="20" y="170" width="180" height="14" rx="4" fill="#e0f2f1"/>
+<rect x="20" y="195" width="200" height="14" rx="4" fill="#e0f2f1"/>
+<rect x="20" y="220" width="150" height="14" rx="4" fill="#e0f2f1"/>
+<circle cx="200" cy="270" r="18" fill="#f54e00"/>
+<path d="M193 270 L198 276 L209 262" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+
+<g transform="translate(560,120)">
+<rect x="30" y="130" width="220" height="170" rx="20" fill="#00796b"/>
+<rect x="50" y="150" width="180" height="130" rx="12" fill="#004d40"/>
+<path d="M60 130 L60 60 C60 20 100 -10 145 -10 C190 -10 230 20 230 60 L230 90" fill="none" stroke="#00796b" stroke-width="24" stroke-linecap="round" transform="rotate(-18 145 60)"/>
+<circle cx="140" cy="205" r="22" fill="#f54e00"/>
+<rect x="132" y="205" width="16" height="45" rx="8" fill="#f54e00"/>
+</g>
+
+<g transform="translate(870,170)">
+<circle cx="0" cy="0" r="10" fill="#f54e00"/>
+<circle cx="90" cy="-40" r="8" fill="#00796b"/>
+<circle cx="150" cy="30" r="8" fill="#00796b"/>
+<circle cx="60" cy="90" r="8" fill="#f54e00"/>
+<circle cx="-70" cy="60" r="8" fill="#00796b"/>
+<line x1="0" y1="0" x2="90" y2="-40" stroke="#004d40" stroke-width="2"/>
+<line x1="0" y1="0" x2="150" y2="30" stroke="#004d40" stroke-width="2"/>
+<line x1="0" y1="0" x2="60" y2="90" stroke="#004d40" stroke-width="2"/>
+<line x1="0" y1="0" x2="-70" y2="60" stroke="#004d40" stroke-width="2"/>
+</g>
+
+<text x="600" y="580" text-anchor="middle" font-family="'Helvetica Neue', Arial, sans-serif" font-size="30" font-weight="500" fill="#1a1a1a">petaflop.hu</text>
+</svg>

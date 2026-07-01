@@ -4,6 +4,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { site } from '../site.config';
 import { t } from '../i18n';
 import { absoluteUrl } from '../utils/paths';
+import { badgeClass } from '../utils/badge';
 
 const i18n = t(site.language);
 const canonicalUrl = absoluteUrl('/tools/');
@@ -29,81 +30,30 @@ tools.sort((a, b) => {
     <p>Curated list of useful AI tools and platforms.</p>
   </div>
   <div class="post-content">
-    <div class="grid">
-      {tools.map((tool) => (
-          <a class="card" href={tool.data.url} target="_blank" rel="noopener noreferrer">
-            <div class="header">
-              <h2>{tool.data.name}</h2>
-              {tool.data.featured && <span class="badge">Featured</span>}
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {tools.map((tool, i) => (
+          <a
+            class="feature-card-cream flex flex-col gap-2 rounded-lg border border-hairline p-5 no-underline transition-transform hover:-translate-y-0.5 dark:border-[#2a3a3a]"
+            href={tool.data.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="flex items-center justify-between gap-2">
+              <h2 class="m-0 text-lg font-semibold">{tool.data.name}</h2>
+              {tool.data.featured && <span class={`badge-pill ${badgeClass(i)}`}>Featured</span>}
             </div>
 
             {tool.data.provider && (
-                <p class="provider">{tool.data.provider}</p>
+                <p class="m-0 text-sm text-muted dark:text-on-dark-soft">{tool.data.provider}</p>
             )}
 
             {tool.data.description && (
-                <p class="desc">{tool.data.description}</p>
+                <p class="m-0 text-sm leading-6 text-body dark:text-on-dark-soft">{tool.data.description}</p>
             )}
 
-            <p class="category">{tool.data.category}</p>
+            <p class="m-0 mt-auto pt-2 text-xs font-semibold uppercase tracking-wide text-muted-soft dark:text-on-dark-soft">{tool.data.category}</p>
           </a>
       ))}
     </div>
   </div>
 </BaseLayout>
-
-<style>
-        .grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-          gap: 1rem;
-          margin-top: 1.5rem;
-        }
-
-        .card {
-          display: block;
-          padding: 1rem;
-          border: 1px solid #ddd;
-          border-radius: 12px;
-          text-decoration: none;
-          color: inherit;
-          transition: transform 0.15s ease, box-shadow 0.15s ease;
-        }
-
-        .card:hover {
-          transform: translateY(-3px);
-          box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-        }
-
-        .header {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-        }
-
-        .badge {
-          font-size: 0.7rem;
-          background: #000;
-          color: #fff;
-          padding: 2px 6px;
-          border-radius: 6px;
-        }
-
-        .provider {
-          font-size: 0.85rem;
-          opacity: 0.7;
-        }
-
-        .desc {
-          margin-top: 0.5rem;
-          font-size: 0.9rem;
-        }
-
-        .category {
-          margin-top: 0.75rem;
-          font-size: 0.75rem;
-          opacity: 0.6;
-          text-transform: uppercase;
-          letter-spacing: 0.05em;
-        }
-</style>

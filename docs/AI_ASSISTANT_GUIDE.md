@@ -12,7 +12,7 @@ Petaflop.hu is a Hungarian AI news blog built with Astro 6 from the Aonote theme
 
 Key files and folders:
 
-- `src/content/posts/` contains blog articles as Markdown or MDX.
+- `src/content/posts/` contains blog articles as Markdown or MDX. New posts go in dated subfolders, e.g. `src/content/posts/2026-01/sample-post.md` (see Content collections below).
 - `src/content/tools/` contains AI tool directory entries.
 - `src/content/pages/` contains static content pages such as About and 404.
 - `src/content.config.ts` defines frontmatter schemas for posts, pages, and tools.
@@ -69,6 +69,19 @@ Supported post fields:
 
 Published lists use `getBlogPosts()` from `src/utils/posts.ts`, which excludes posts where `draft` or `hidden` is true and sorts newest first.
 
+### Post file structure
+
+New posts go in `src/content/posts/YYYY-MM/slug.md`, grouped by the post's publish year and month, for example:
+
+```
+src/content/posts/2026-01/openai-sora-leallitas.md
+src/content/posts/2026-02/anthropic-claude-update.md
+```
+
+The `YYYY-MM` folder name should match the post's frontmatter `date`. The content collection loader reads posts recursively, and the folder path becomes part of the post's URL (via `postSlug()`/`postUrl()` in `src/utils/posts.ts`), so `src/content/posts/2026-01/openai-sora-leallitas.md` is served at `/posts/2026-01/openai-sora-leallitas/`.
+
+Existing posts predating this convention remain as flat files directly under `src/content/posts/` and should not be moved into dated folders, since that would change their published URLs.
+
 Tools use the `tools` collection. Required frontmatter:
 
 ```yaml
@@ -95,8 +108,13 @@ Allowed tool categories are `chat`, `image`, `design`, `music`, `code`, `researc
 - Keep titles specific and natural in Hungarian.
 - Keep summaries one sentence long when possible.
 - Use tags consistently. Common tags include `AI`, `OpenAI`, `Google`, `Anthropic`, `Microsoft`, `videó`, `kódolás`, `ügynökök`, and `kutatás`.
+- **Tag casing is exact-match, not normalized.** `getAllTags()`/`getStaticPaths()` in `src/utils/posts.ts` and `src/pages/tags/[tag].astro` compare tag strings verbatim, so `AI` and `ai` are treated as two different tags even though `tagToSlug()` lowercases both to the same `/tags/ai/` URL — meaning mismatched casing silently splits a tag's posts across duplicate entries. Before adding a tag, check existing usage (`grep -rhn '^tags:' src/content/posts`) and reuse the exact casing already in use rather than inventing a new variant. Casing conventions:
+  - Acronyms: all caps, e.g. `AI`, `GPU`, `IPO`, `LLM`.
+  - Brand/product names: match their official styling, e.g. `OpenAI`, `ChatGPT`, `Anthropic`, `Luma`, `Gemini`.
+  - Generic Hungarian nouns: lowercase, e.g. `videó`, `kódolás`, `ügynökök`, `kutatás`, `szabályozás`.
+  - Hyphenated compound tags: all lowercase, e.g. `ai-agens`, `generativ-ai`.
 - Do not publish drafts accidentally. Use `draft: true` for unfinished posts.
-- Keep filenames lowercase, descriptive, and slug-like, for example `openai-sora-leallitas.md`.
+- Keep filenames lowercase, descriptive, and slug-like, for example `openai-sora-leallitas.md`, placed in its `YYYY-MM` dated folder under `src/content/posts/`.
 
 ## Astro and code conventions
 

@@ -1,0 +1,14 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "petaflop-dev",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": [
+        "-lc",
+        "export NVM_DIR=\"$HOME/.nvm\"; source \"$NVM_DIR/nvm.sh\"; nvm use 22.19.0; npm run dev -- --port 4322"
+      ],
+      "port": 4322
+    }
+  ]
+}

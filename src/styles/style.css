@@ -1,3 +1,43 @@
+@import "tailwindcss";
+
+/* Clay design tokens exposed as Tailwind utilities (bg-canvas, text-ink, bg-brand-pink, rounded-xl, ...) */
+@theme {
+    --color-canvas: #fffaf0;
+    --color-surface-soft: #faf5e8;
+    --color-surface-card: #f5f0e0;
+    --color-surface-strong: #ebe6d6;
+    --color-surface-dark: #0a1a1a;
+    --color-surface-dark-elevated: #1a2a2a;
+
+    --color-ink: #0a0a0a;
+    --color-body: #3a3a3a;
+    --color-body-strong: #1a1a1a;
+    --color-muted: #6a6a6a;
+    --color-muted-soft: #9a9a9a;
+    --color-hairline: #e5e5e5;
+    --color-hairline-soft: #f0f0f0;
+
+    --color-on-primary: #ffffff;
+    --color-on-dark: #ffffff;
+    --color-on-dark-soft: #a0a0a0;
+
+    --color-brand-pink: #ff4d8b;
+    --color-brand-teal: #1a3a3a;
+    --color-brand-lavender: #b8a4ed;
+    --color-brand-peach: #ffb084;
+    --color-brand-ochre: #e8b94a;
+    --color-brand-mint: #a4d4c5;
+    --color-brand-coral: #ff6b5a;
+
+    /* Interactive accent (links, hovers, CTAs) — brand-teal, matches --color-primary in the CSS-var system. */
+    --color-accent: #1a3a3a;
+    --color-accent-active: #0f2626;
+
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+}
+
 /* A. 全局重置 & 滚动条美化 / Global reset & scrollbar styling */
 *,
 *::before,
@@ -13,7 +53,7 @@
 
 /* 代码块内选中：半透明品牌色，避免浅底看不清 / Code block selection: semi-transparent brand color */
 .post-content pre ::selection {
-    background-color: rgba(0, 121, 107, 0.25);
+    background-color: rgba(26, 58, 58, 0.25);
     color: inherit;
 }
 
@@ -48,30 +88,33 @@
     }
 }
 
-/* C. 主题变量 / Theme variables */
+/* C. 主题变量 / Theme variables (Clay design system — see DESIGN.md) */
 :root {
-    --color-primary: #00796b;
-    --color-primary-light: #e0f2f1;
-    --color-link-dark: #80cbc4;
+    /* Accent used for links, hovers, and CTA buttons: brand-teal — reads as ink-dark on the cream
+       canvas but keeps a distinguishable, in-palette color for interactive elements. */
+    --color-primary: #1a3a3a;
+    --color-primary-active: #0f2626;
+    --color-primary-light: rgba(26, 58, 58, 0.08);
+    --color-link-dark: #a4d4c5;
 
-    --color-text: #2c3e50;
-    --color-text-secondary: #555;
-    --color-background: #ffffff;
+    --color-text: #0a0a0a;
+    --color-text-secondary: #3a3a3a;
+    --color-background: #fffaf0;
     --color-card: #ffffff;
-    --color-border: #f0f0f0;
+    --color-border: #e5e5e5;
 
-    --color-text-dark: #ededed;
-    --color-text-secondary-dark: #a8b3bf;
-    --color-background-dark: #121212;
-    --color-card-dark: #1e1e1e;
-    --color-border-light: #333;
-    --color-border-dark: #2a2a2a;
+    --color-text-dark: #ffffff;
+    --color-text-secondary-dark: #a0a0a0;
+    --color-background-dark: #0a1a1a;
+    --color-card-dark: #1a2a2a;
+    --color-border-light: #2a3a3a;
+    --color-border-dark: #14201f;
 
-    --color-code-bg: #f8f9fa;
-    --color-code-bg-dark: #22272e;
-    --color-admonition-note: #00796b;
-    --color-admonition-warn: #fbc02d;
-    --color-admonition-danger: #d32f2f;
+    --color-code-bg: #f5f0e0;
+    --color-code-bg-dark: #14201f;
+    --color-admonition-note: #1a3a3a;
+    --color-admonition-warn: #f59e0b;
+    --color-admonition-danger: #ef4444;
 
     --color-main-text: var(--color-text);
     --color-main-subtext: var(--color-text-secondary);
@@ -85,9 +128,11 @@
     --space-lg: 24px;
     --space-xl: 40px;
 
-    --radius-sm: 4px;
-    --radius-md: 8px;
-    --radius-pill: 999px;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-pill: 9999px;
 
     --content-width: 800px;
     --reading-width: 68ch;
@@ -96,7 +141,7 @@
     --target-offset: 132px;
     --target-offset-mobile: 58px;
     --focus-ring-color: var(--color-primary);
-    --focus-ring-shadow: 0 0 0 4px rgba(0, 121, 107, 0.16);
+    --focus-ring-shadow: 0 0 0 4px rgba(26, 58, 58, 0.16);
 
     --font-emoji: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, var(--font-emoji), sans-serif;
@@ -112,7 +157,7 @@
         --color-main-card: var(--color-card-dark);
         --color-main-border: var(--color-border-light);
         --focus-ring-color: var(--color-link-dark);
-        --focus-ring-shadow: 0 0 0 4px rgba(128, 203, 196, 0.18);
+        --focus-ring-shadow: 0 0 0 4px rgba(164, 212, 197, 0.2);
     }
 }
 
@@ -149,7 +194,7 @@ a {
 }
 
 a:hover {
-    color: #004d40;
+    color: var(--color-primary-active);
     text-decoration-color: currentColor;
 }
 
@@ -169,7 +214,7 @@ a:focus:not(:focus-visible) {
     }
 
     a:hover {
-        color: #b2dfdb;
+        color: #cdeee3;
     }
 
 }
@@ -204,17 +249,20 @@ h6 {
 
 h1 {
     font-size: 2rem;
-    letter-spacing: -0.02em;
-    line-height: 1.2;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
 }
 
 h2 {
-    font-size: 1.6rem;
-    letter-spacing: -0.01em;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
 }
 
 h3 {
-    font-size: 1.3rem;
+    font-size: 1.125rem;
+    font-weight: 600;
     letter-spacing: 0;
 }
 
@@ -253,7 +301,7 @@ li {
 }
 
 header {
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(255, 250, 240, 0.95);
     padding: var(--space-lg) 0;
     position: sticky;
     top: 0;
@@ -265,7 +313,7 @@ header {
 
 @media (prefers-color-scheme: dark) {
     header {
-        background-color: rgba(18, 18, 18, 0.95);
+        background-color: rgba(10, 26, 26, 0.95);
     }
 }
 
@@ -414,7 +462,7 @@ main {
     .toc-area li a:hover,
     .toc-area li a:focus {
         color: var(--color-link-dark);
-        background-color: rgba(0, 121, 107, 0.1);
+        background-color: rgba(26, 58, 58, 0.1);
     }
 }
 
@@ -438,6 +486,16 @@ main {
 .page-tags .content-area {
     flex-basis: 100%;
     max-width: 100%;
+}
+
+.page-index main {
+    padding-top: 0;
+}
+
+.page-index .main-layout,
+.page-index .header-inner,
+.page-index .footer-content {
+    max-width: 1180px;
 }
 
 /* --- 移动端目录动画与交互优化 / Mobile TOC animation & interaction --- */
@@ -1094,7 +1152,7 @@ main {
     }
     .table-wrapper:focus-within {
         border-color: var(--color-link-dark);
-        box-shadow: 0 0 0 2px rgba(0, 121, 107, 0.3);
+        box-shadow: 0 0 0 2px rgba(26, 58, 58, 0.3);
     }
 }
 
@@ -1335,8 +1393,8 @@ main {
 
 @media (prefers-color-scheme: dark) {
     .post-content :target {
-        background-color: rgba(0, 121, 107, 0.1);
-        box-shadow: 0 0 0 4px rgba(128, 203, 196, 0.12);
+        background-color: rgba(26, 58, 58, 0.1);
+        box-shadow: 0 0 0 4px rgba(164, 212, 197, 0.12);
     }
 }
 
@@ -1344,8 +1402,10 @@ main {
 .page-header h1 {
     margin-top: 0;
     margin-bottom: 15px;
-    font-size: 2rem;
-    line-height: 1.25;
+    font-size: 2.25rem;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
 }
 
 .post-meta {
@@ -1447,7 +1507,7 @@ main {
 
     .meta-tags .tag-badge:hover {
         color: var(--color-link-dark);
-        background-color: rgba(0, 121, 107, 0.15);
+        background-color: rgba(26, 58, 58, 0.15);
         border-color: var(--color-link-dark);
     }
 }
@@ -1737,7 +1797,9 @@ main {
 }
 
 .archive-year {
-    font-size: 1.8rem;
+    font-size: 1.75rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
     margin-top: 2rem;
     margin-bottom: 1rem;
     padding-bottom: 0.5rem;
@@ -2070,19 +2132,135 @@ footer {
 .button-secondary:hover {
     border-color: var(--color-primary);
     color: var(--color-primary);
-    background-color: rgba(0, 121, 107, 0.06);
+    background-color: rgba(26, 58, 58, 0.06);
     box-shadow: none;
 }
 
 .button:active,
 .button-secondary:focus {
-    background-color: rgba(0, 121, 107, 0.1);
+    background-color: rgba(26, 58, 58, 0.1);
     box-shadow: none;
 }
 
 .button-small {
     padding: var(--space-xs) var(--space-sm);
     font-size: 0.85rem;
+}
+
+.button-primary {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 20px;
+    border-radius: var(--radius-md);
+    background-color: var(--color-ink, #0a0a0a);
+    color: #ffffff;
+    font-weight: 500;
+    text-decoration: none !important;
+    transition: background-color 0.2s;
+}
+
+.button-primary:hover {
+    background-color: #1f1f1f;
+}
+
+/* S. Clay 卡片与徽章组件 / Feature cards & category badges */
+.feature-card {
+    border-radius: var(--radius-xl);
+    padding: var(--space-lg);
+}
+
+.feature-card-pink {
+    background-color: var(--color-brand-pink, #ff4d8b);
+    color: #ffffff;
+}
+
+.feature-card-teal {
+    background-color: var(--color-brand-teal, #1a3a3a);
+    color: #ffffff;
+}
+
+.feature-card-lavender {
+    background-color: var(--color-brand-lavender, #b8a4ed);
+    color: var(--color-ink, #0a0a0a);
+}
+
+.feature-card-peach {
+    background-color: var(--color-brand-peach, #ffb084);
+    color: var(--color-ink, #0a0a0a);
+}
+
+.feature-card-ochre {
+    background-color: var(--color-brand-ochre, #e8b94a);
+    color: var(--color-ink, #0a0a0a);
+}
+
+.feature-card-cream {
+    background-color: var(--color-surface-card, #f5f0e0);
+    color: var(--color-ink, #0a0a0a);
+}
+
+.badge-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 12px;
+    border-radius: var(--radius-pill);
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1.4;
+    text-decoration: none !important;
+    white-space: nowrap;
+}
+
+.badge-pink {
+    background-color: var(--color-brand-pink, #ff4d8b);
+    color: #ffffff;
+}
+
+.badge-teal {
+    background-color: var(--color-brand-teal, #1a3a3a);
+    color: #ffffff;
+}
+
+.badge-lavender {
+    background-color: var(--color-brand-lavender, #b8a4ed);
+    color: var(--color-ink, #0a0a0a);
+}
+
+.badge-peach {
+    background-color: var(--color-brand-peach, #ffb084);
+    color: var(--color-ink, #0a0a0a);
+}
+
+.badge-ochre {
+    background-color: var(--color-brand-ochre, #e8b94a);
+    color: var(--color-ink, #0a0a0a);
+}
+
+a.badge-pink:hover,
+a.badge-teal:hover {
+    opacity: 0.85;
+}
+
+a.badge-lavender:hover,
+a.badge-peach:hover,
+a.badge-ochre:hover {
+    filter: brightness(0.95);
+}
+
+@media (prefers-color-scheme: dark) {
+    .feature-card-cream {
+        background-color: var(--color-card-dark, #1a2a2a);
+        color: var(--color-text-dark, #ffffff);
+    }
+
+    .feature-card-lavender,
+    .feature-card-peach,
+    .feature-card-ochre,
+    .badge-lavender,
+    .badge-peach,
+    .badge-ochre {
+        color: var(--color-ink, #0a0a0a);
+    }
 }
 
 /* 无障碍与焦点 / A11Y & Focus */
@@ -2349,7 +2527,7 @@ summary:focus:not(:focus-visible) {
         .mobile-nav-links a:hover,
         .mobile-nav-links a:focus,
         .mobile-nav-links a[aria-current="page"] {
-            background-color: rgba(128, 203, 196, 0.12);
+            background-color: rgba(164, 212, 197, 0.12);
             color: var(--color-link-dark);
         }
     }
@@ -2911,7 +3089,7 @@ summary:focus:not(:focus-visible) {
     display: inline-block;
 
     /* 纯 CSS 阴影效果 / Pure CSS text-shadow effect */
-    text-shadow: 4px 4px 0px rgba(0, 121, 107, 0.15);
+    text-shadow: 4px 4px 0px rgba(26, 58, 58, 0.15);
 }
 
 /* 装饰性分割线 / Decorative divider */
@@ -2947,17 +3125,17 @@ summary:focus:not(:focus-visible) {
     background-color: var(--color-primary);
     color: #fff;
     border-radius: var(--radius-pill);
-    box-shadow: 0 4px 15px rgba(0, 121, 107, 0.3);
+    box-shadow: 0 4px 15px rgba(26, 58, 58, 0.3);
     transition: box-shadow 0.2s, background-color 0.2s;
 }
 
 .error-container .button:hover {
-    box-shadow: 0 4px 15px rgba(0, 121, 107, 0.4);
-    background-color: #00695c;
+    box-shadow: 0 4px 15px rgba(26, 58, 58, 0.4);
+    background-color: var(--color-primary-active);
 }
 
 .error-container .button:active {
-    background-color: #004d40;
+    background-color: #0a1a1a;
 }
 
 /* 简单的淡入动画 / Simple fade-in animation */
@@ -2981,12 +3159,12 @@ summary:focus:not(:focus-visible) {
     .error-container .button {
         background-color: var(--color-link-dark);
         color: var(--color-background-dark);
-        box-shadow: 0 4px 15px rgba(128, 203, 196, 0.2);
+        box-shadow: 0 4px 15px rgba(164, 212, 197, 0.2);
     }
 
     .error-container .button:hover {
         background-color: #b2dfdb;
-        box-shadow: 0 6px 20px rgba(128, 203, 196, 0.3);
+        box-shadow: 0 6px 20px rgba(164, 212, 197, 0.3);
     }
 }
 

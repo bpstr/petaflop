@@ -2,7 +2,7 @@
 title: Megérkezett a Grok Imagine Video 1.5
 date: 2026-06-16
 summary: Az xAI új videógeneráló modellje gyorsabb, és jobb hangot, mozgást ad.
-tags: [ai, video, xai, grok]
+tags: [AI, video, xai, grok]
 ---
 
 Az xAI elérhetővé tette a Grok Imagine Video 1.5-öt, amely a cég eddigi legjobb kép-videó modellje. A frissítés minden fontos területen javít: hangban, mozgásban és sebességben is.

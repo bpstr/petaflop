@@ -18,7 +18,9 @@ export async function getBlogPosts(): Promise<Post[]> {
 export const getPublishedPosts = getBlogPosts;
 
 export function formatDate(date: Date, locale: string): string {
-  return date.toLocaleDateString(locale === 'zh-CN' ? 'zh-CN' : 'en-US', {
+  const dateLocale = locale === 'zh-CN' ? 'zh-CN' : locale.startsWith('hu') ? 'hu-HU' : 'en-US';
+
+  return date.toLocaleDateString(dateLocale, {
     year: 'numeric',
     month: 'long',
     day: 'numeric',

@@ -16,7 +16,7 @@ Read the shared agent guide before editing: [AI_ASSISTANT_GUIDE.md](./docs/AI_AS
 ## Important local context
 
 - Node.js must be `>=22.12.0`.
-- Posts live in `src/content/posts/`.
+- New posts live in `src/content/posts/YYYY-MM/`, grouped by publish year and month (for example `src/content/posts/2026-01/sample-post.md`). The folder also sets the URL, e.g. `/posts/2026-01/sample-post/`. Don't move existing flat-file posts into dated folders — that changes their live URLs.
 - Tool directory entries live in `src/content/tools/`.
 - Site metadata and deployment URL live in `src/site.config.ts`.
 - Astro content schemas live in `src/content.config.ts`.

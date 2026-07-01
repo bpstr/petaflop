@@ -2,6 +2,7 @@
 import type { Post } from '../utils/posts';
 import { formatDate, postUrl, tagUrl } from '../utils/posts';
 import { site } from '../site.config';
+import { badgeClass } from '../utils/badge';
 
 interface Props {
   post: Post;
@@ -20,8 +21,8 @@ const dateStr = formatDate(post.data.date, site.language);
     <span class="meta-date-wrapper">{dateStr}</span>
     {post.data.tags.length > 0 && (
       <div class="tags-wrapper">
-        {post.data.tags.map((tag) => (
-          <a href={tagUrl(tag)} class="tag-badge">{tag}</a>
+        {post.data.tags.map((tag, i) => (
+          <a href={tagUrl(tag)} class={`badge-pill ${badgeClass(i)}`}>{tag}</a>
         ))}
       </div>
     )}

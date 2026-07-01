@@ -16,6 +16,7 @@ import {
 } from '../../utils/posts';
 import { render } from 'astro:content';
 import { Image } from 'astro:assets';
+import { badgeClass } from '../../utils/badge';
 
 export async function getStaticPaths() {
   const allBlogPosts = await getBlogPosts();
@@ -77,9 +78,9 @@ const hasToc = tocHeadings.some((h) => h.depth >= 1 && h.depth <= 4);
           {post.data.tags.length > 0 && (
             <div class="meta-tags">
               <ul class="tags-list">
-                {post.data.tags.map((tag) => (
+                {post.data.tags.map((tag, i) => (
                   <li>
-                    <a href={tagUrl(tag)} class="tag-badge">{tag}</a>
+                    <a href={tagUrl(tag)} class={`badge-pill ${badgeClass(i)}`}>{tag}</a>
                   </li>
                 ))}
               </ul>
