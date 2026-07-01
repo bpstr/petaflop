@@ -2576,6 +2576,20 @@ summary:focus:not(:focus-visible) {
     color: var(--color-main-subtext);
 }
 
+/* P2. 相关文章 / Related articles */
+.related-posts {
+    margin-top: calc(var(--space-xl) * 1.5);
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--color-main-border);
+}
+
+.related-posts-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 var(--space-md);
+    color: var(--color-main-text);
+}
+
 /* Q. 文章上/下导航 (交互优化) / Post prev/next navigation (interaction) */
 .post-navigation {
     display: flex;

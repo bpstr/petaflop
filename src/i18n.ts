@@ -47,6 +47,7 @@ export const TRANSLATIONS = {
     taskIncompleteLabel: (task: string) => `Incomplete task: ${task}`,
     prevPost: 'Previous post',
     nextPost: 'Next post',
+    relatedPosts: 'Related articles',
     copyrightAdditionalNote:
       'This content is protected by the selected license. When reusing or quoting, keep the author attribution and original link.',
     copyrightFormatTemplate: (title: string, author: string, url: string) =>
@@ -99,6 +100,7 @@ export const TRANSLATIONS = {
     taskIncompleteLabel: (task: string) => `Befejezetlen feladat: ${task}`,
     prevPost: 'Előző bejegyzés',
     nextPost: 'Következő bejegyzés',
+    relatedPosts: 'Kapcsolódó cikkek',
     copyrightAdditionalNote:
         'Ez a tartalom a kiválasztott licenc védelme alatt áll. Újrafelhasználás vagy idézés esetén tüntesd fel a szerzőt és az eredeti hivatkozást.',
     copyrightFormatTemplate: (title: string, author: string, url: string) =>

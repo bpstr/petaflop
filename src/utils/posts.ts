@@ -71,3 +71,33 @@ export function getAdjacentPosts(
     next: idx >= 0 && idx < posts.length - 1 ? posts[idx + 1]! : null,
   };
 }
+
+/** Posts sharing the most tags with `current`, most recent first; backfilled with recent posts if needed. */
+export function getRelatedPosts(posts: Post[], current: Post, limit = 3): Post[] {
+  const currentTags = new Set(current.data.tags);
+  const others = posts.filter((p) => p.id !== current.id);
+
+  const scored = others
+    .map((post) => ({
+      post,
+      shared: post.data.tags.filter((tag) => currentTags.has(tag)).length,
+    }))
+    .filter(({ shared }) => currentTags.size === 0 || shared > 0)
+    .sort((a, b) => {
+      if (b.shared !== a.shared) return b.shared - a.shared;
+      return b.post.data.date.valueOf() - a.post.data.date.valueOf();
+    });
+
+  const related = scored.slice(0, limit).map(({ post }) => post);
+
+  if (related.length < limit) {
+    const usedIds = new Set(related.map((p) => p.id));
+    const fallback = others
+      .filter((p) => !usedIds.has(p.id))
+      .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+      .slice(0, limit - related.length);
+    related.push(...fallback);
+  }
+
+  return related;
+}
