@@ -28,38 +28,41 @@ const secondaryVisual = coverPosts[1];
     <p class="empty-state">{i18n.noPosts}</p>
   ) : (
     <div class="bg-canvas text-ink dark:bg-surface-dark dark:text-on-dark">
-      <section class="border-b border-hairline py-7 dark:border-[#2a3a3a] md:py-11 lg:py-14">
-        <div class="grid gap-5 lg:grid-cols-[minmax(0,1.25fr)_minmax(320px,0.75fr)] lg:items-end">
-          <div class="max-w-4xl">
-            <p class="mb-3 inline-flex rounded-full border border-hairline bg-white px-3 py-1 text-[11px] font-semibold uppercase leading-none text-muted dark:border-[#2a3a3a] dark:bg-surface-dark-elevated dark:text-on-dark-soft">
-              AI hírek és számítási teljesítmény
-            </p>
-            <h1 class="m-0 max-w-4xl text-5xl font-medium leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
-              Petaflop
-            </h1>
-            <p class="mt-3 max-w-2xl text-base leading-7 text-body dark:text-on-dark-soft md:text-lg md:leading-8">
-              Magyar magazin az AI-laborok, szuperszámítógépek, modellek és iparági döntések nagy teljesítményű világából.
-            </p>
-          </div>
-
-          <aside class="border-t border-hairline pt-4 dark:border-[#2a3a3a] lg:border-l lg:border-t-0 lg:pl-7 lg:pt-0">
-            <p class="mb-2 text-[11px] font-semibold uppercase text-muted dark:text-on-dark-soft">Friss lapszám</p>
-            <a href={leadUrl} class="group block no-underline">
-              <span class="text-sm text-muted dark:text-on-dark-soft">{latestDate}</span>
-              <h2 class="mt-2 text-xl font-medium leading-tight tracking-tight group-hover:!text-accent dark:group-hover:!text-brand-mint md:text-2xl">
-                {leadPost.data.title}
-              </h2>
-              {leadPost.data.summary && <p class="mt-2 text-sm leading-6 text-body dark:text-on-dark-soft">{leadPost.data.summary}</p>}
-            </a>
-          </aside>
-        </div>
+      <section class="border-b border-hairline py-6 dark:border-[#2a3a3a] md:py-8">
+        <p class="mb-2 inline-flex rounded-full border border-hairline bg-white px-3 py-1 text-[11px] font-semibold uppercase leading-none text-muted dark:border-[#2a3a3a] dark:bg-surface-dark-elevated dark:text-on-dark-soft">
+          AI hírek és számítási teljesítmény
+        </p>
+        <h1 class="m-0 text-4xl font-medium leading-[1.05] tracking-tight sm:text-5xl">
+          Petaflop
+        </h1>
+        <p class="mt-3 max-w-2xl text-base leading-7 text-body dark:text-on-dark-soft">
+          Magyar magazin az AI-laborok, szuperszámítógépek, modellek és iparági döntések nagy teljesítményű világából.
+          <span class="text-muted dark:text-on-dark-soft"> Friss lapszám: {latestDate}</span>
+        </p>
       </section>
 
-      <section class="grid gap-6 border-b border-hairline py-7 dark:border-[#2a3a3a] lg:grid-cols-[minmax(0,1.4fr)_minmax(280px,0.6fr)] lg:py-8">
-        <article class="grid gap-5 rounded-lg border border-hairline bg-white p-5 dark:border-[#2a3a3a] dark:bg-surface-dark-elevated md:grid-cols-[minmax(0,0.95fr)_minmax(280px,1.05fr)]">
-          <div class="flex min-h-[300px] flex-col justify-between">
+      <section class="border-b border-hairline py-6 dark:border-[#2a3a3a] md:py-8">
+        <article class="grid gap-5 rounded-lg border border-hairline bg-white p-4 dark:border-[#2a3a3a] dark:bg-surface-dark-elevated sm:grid-cols-2 sm:p-5">
+          <div class="overflow-hidden rounded-lg border border-hairline-soft bg-surface-soft dark:border-[#2a3a3a] dark:bg-surface-dark-elevated sm:order-2">
+            {primaryVisual?.data.cover ? (
+              <a href={postUrl(primaryVisual)} class="group block h-full min-h-[180px] no-underline">
+                <img
+                  src={primaryVisual.data.cover}
+                  alt=""
+                  class="h-full min-h-[180px] w-full object-cover transition duration-300 group-hover:scale-[1.02]"
+                  loading="eager"
+                />
+              </a>
+            ) : (
+              <div class="grid h-full min-h-[180px] place-items-center p-6 text-center">
+                <p class="font-mono text-sm leading-6 text-body dark:text-on-dark-soft">compute / model / market / policy</p>
+              </div>
+            )}
+          </div>
+
+          <div class="flex flex-col justify-between sm:order-1">
             <div>
-              <div class="mb-4 flex flex-wrap gap-2">
+              <div class="mb-3 flex flex-wrap gap-2">
                 {leadTags.map((tag, i) => (
                   <a href={tagUrl(tag)} class={`badge-pill ${badgeClass(i)}`}>
                     {tag}
@@ -67,91 +70,72 @@ const secondaryVisual = coverPosts[1];
                 ))}
               </div>
               <a href={leadUrl} class="group no-underline">
-                <h2 class="m-0 text-3xl font-medium leading-tight tracking-tight group-hover:!text-accent dark:group-hover:!text-brand-mint md:text-5xl">
+                <h2 class="m-0 text-2xl font-medium leading-tight tracking-tight group-hover:!text-accent dark:group-hover:!text-brand-mint sm:text-3xl">
                   {leadPost.data.title}
                 </h2>
               </a>
-              {leadPost.data.summary && <p class="mt-4 text-base leading-7 text-body dark:text-on-dark-soft">{leadPost.data.summary}</p>}
+              {leadPost.data.summary && <p class="mt-3 text-sm leading-6 text-body dark:text-on-dark-soft">{leadPost.data.summary}</p>}
             </div>
-            <a href={leadUrl} class="button-primary mt-6 w-fit">
+            <a href={leadUrl} class="button-primary mt-4 w-fit">
               Cikk olvasása
             </a>
           </div>
-
-          <div class="overflow-hidden rounded-lg border border-hairline-soft bg-surface-soft dark:border-[#2a3a3a] dark:bg-surface-dark-elevated">
-            {primaryVisual?.data.cover ? (
-              <a href={postUrl(primaryVisual)} class="group block h-full min-h-[300px] no-underline">
-                <img
-                  src={primaryVisual.data.cover}
-                  alt=""
-                  class="h-full min-h-[300px] w-full object-cover transition duration-300 group-hover:scale-[1.02]"
-                  loading="eager"
-                />
-              </a>
-            ) : (
-              <div class="grid h-full min-h-[300px] place-items-center p-8 text-center">
-                <p class="font-mono text-sm leading-6 text-body dark:text-on-dark-soft">compute / model / market / policy</p>
-              </div>
-            )}
-          </div>
         </article>
 
-        <div class="grid gap-4">
+        <div class="mt-4 grid gap-4 sm:grid-cols-2">
           {featuredPosts.map((post, index) => (
-            <article class={`feature-card ${featureCardClass(index)}`}>
-              <p class="mb-3 text-[11px] font-semibold uppercase opacity-80">
+            <article class={`feature-card ${featureCardClass(index)} !p-4`}>
+              <p class="mb-2 text-[11px] font-semibold uppercase opacity-80">
                 Kiemelt
               </p>
               <a href={postUrl(post)} class="group no-underline">
-                <h3 class="m-0 text-2xl font-medium leading-tight tracking-tight group-hover:underline">
+                <h3 class="m-0 text-lg font-medium leading-tight tracking-tight group-hover:underline">
                   {post.data.title}
                 </h3>
               </a>
-              {post.data.summary && <p class="mt-3 text-sm leading-6 opacity-90">{post.data.summary}</p>}
+              {post.data.summary && <p class="mt-2 text-sm leading-6 opacity-90">{post.data.summary}</p>}
             </article>
           ))}
         </div>
       </section>
 
-      <section class="grid gap-7 py-8 lg:grid-cols-[minmax(0,0.68fr)_minmax(280px,0.32fr)]">
-        <div>
-          <div class="mb-3 flex items-end justify-between gap-4 border-b border-hairline pb-3 dark:border-[#2a3a3a]">
-            <h2 class="m-0 text-2xl font-medium tracking-tight">Hírfolyam</h2>
-            <a href={siteHref('/archive/')} class="text-sm font-medium no-underline">Archívum</a>
-          </div>
-          <div class="divide-y divide-hairline border-b border-hairline dark:divide-[#2a3a3a] dark:border-[#2a3a3a]">
-            {briefingPosts.map((post) => (
-              <article class="grid gap-3 py-4 sm:grid-cols-[128px_minmax(0,1fr)]">
-                <time class="text-sm text-muted dark:text-on-dark-soft" datetime={post.data.date.toISOString()}>
-                  {formatDate(post.data.date, locale)}
-                </time>
-                <div>
-                  <a href={postUrl(post)} class="group no-underline">
-                    <h3 class="m-0 text-xl font-medium leading-tight tracking-tight group-hover:!text-accent dark:group-hover:!text-brand-mint md:text-2xl">
-                      {post.data.title}
-                    </h3>
-                  </a>
-                  {post.data.summary && <p class="mt-2 text-sm leading-6 text-body dark:text-on-dark-soft">{post.data.summary}</p>}
-                </div>
-              </article>
-            ))}
-          </div>
+      <section class="py-6 md:py-8">
+        <div class="mb-3 flex items-end justify-between gap-4 border-b border-hairline pb-3 dark:border-[#2a3a3a]">
+          <h2 class="m-0 text-xl font-medium tracking-tight">Hírfolyam</h2>
+          <a href={siteHref('/archive/')} class="text-sm font-medium no-underline">Archívum</a>
+        </div>
+        <div class="divide-y divide-hairline border-b border-hairline dark:divide-[#2a3a3a] dark:border-[#2a3a3a]">
+          {briefingPosts.map((post) => (
+            <article class="grid gap-2 py-3 sm:grid-cols-[140px_minmax(0,1fr)]">
+              <time class="text-sm text-muted dark:text-on-dark-soft" datetime={post.data.date.toISOString()}>
+                {formatDate(post.data.date, locale)}
+              </time>
+              <div>
+                <a href={postUrl(post)} class="group no-underline">
+                  <h3 class="m-0 text-lg font-medium leading-tight tracking-tight group-hover:!text-accent dark:group-hover:!text-brand-mint">
+                    {post.data.title}
+                  </h3>
+                </a>
+                {post.data.summary && <p class="mt-1 text-sm leading-6 text-body dark:text-on-dark-soft">{post.data.summary}</p>}
+              </div>
+            </article>
+          ))}
         </div>
 
-        <aside class="space-y-5">
+        <div class="mt-5 grid gap-4 sm:grid-cols-2">
           {secondaryVisual?.data.cover && (
-            <a href={postUrl(secondaryVisual)} class="group block overflow-hidden rounded-lg border border-hairline bg-white no-underline dark:border-[#2a3a3a] dark:bg-surface-dark-elevated">
-              <img src={secondaryVisual.data.cover} alt="" class="aspect-[4/3] w-full object-cover transition duration-300 group-hover:scale-[1.02]" loading="lazy" />
-              <div class="p-5">
-                <p class="mb-3 text-[11px] font-semibold uppercase text-muted dark:text-on-dark-soft">Képes riport</p>
-                <h3 class="m-0 text-xl font-medium leading-tight tracking-tight group-hover:!text-accent dark:group-hover:!text-brand-mint">{secondaryVisual.data.title}</h3>
+            <a href={postUrl(secondaryVisual)} class="group flex overflow-hidden rounded-lg border border-hairline bg-white no-underline dark:border-[#2a3a3a] dark:bg-surface-dark-elevated">
+              <img src={secondaryVisual.data.cover} alt="" class="w-28 shrink-0 object-cover transition duration-300 group-hover:scale-[1.02]" loading="lazy" />
+              <div class="flex flex-col justify-center p-3">
+                <p class="mb-1 text-[11px] font-semibold uppercase text-muted dark:text-on-dark-soft">Képes riport</p>
+                <h3 class="m-0 text-sm font-medium leading-tight tracking-tight group-hover:!text-accent dark:group-hover:!text-brand-mint">{secondaryVisual.data.title}</h3>
               </div>
             </a>
           )}
 
-          <div class="rounded-lg border border-hairline bg-white p-5 dark:border-[#2a3a3a] dark:bg-surface-dark-elevated">
-            <h2 class="m-0 text-xl font-medium tracking-tight">Témák</h2>
-            <div class="mt-4 flex flex-wrap gap-2">
+          <div class="rounded-lg border border-hairline bg-white p-4 dark:border-[#2a3a3a] dark:bg-surface-dark-elevated">
+            <h2 class="m-0 text-sm font-medium tracking-tight">Témák</h2>
+            <div class="mt-3 flex flex-wrap gap-2">
               {allTags.map((tag, i) => (
                 <a href={tagUrl(tag)} class={`badge-pill ${badgeClass(i)}`}>
                   {tag}
@@ -159,7 +143,7 @@ const secondaryVisual = coverPosts[1];
               ))}
             </div>
           </div>
-        </aside>
+        </div>
       </section>
     </div>
   )}

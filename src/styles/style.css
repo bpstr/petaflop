@@ -492,12 +492,6 @@ main {
     padding-top: 0;
 }
 
-.page-index .main-layout,
-.page-index .header-inner,
-.page-index .footer-content {
-    max-width: 1180px;
-}
-
 /* --- 移动端目录动画与交互优化 / Mobile TOC animation & interaction --- */
 .mobile-toc {
     display: none;
@@ -2236,14 +2230,21 @@ footer {
     color: var(--color-ink, #0a0a0a);
 }
 
+a.badge-pill:focus,
+a.badge-pill:focus-visible {
+    border-radius: var(--radius-pill);
+}
+
 a.badge-pink:hover,
 a.badge-teal:hover {
+    color: #ffffff;
     opacity: 0.85;
 }
 
 a.badge-lavender:hover,
 a.badge-peach:hover,
 a.badge-ochre:hover {
+    color: var(--color-ink, #0a0a0a);
     filter: brightness(0.95);
 }
 
