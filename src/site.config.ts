@@ -1,3 +1,5 @@
+import type { Locale } from './i18n';
+
 /** Site configuration — edit this file to customize your blog. */
 export const site = {
   /** Production URL (no trailing slash). */
@@ -8,8 +10,8 @@ export const site = {
   description:
     'A Petaflop.hu a mesterséges intelligencia forradalmát mozgató hatalmas számítási teljesítményt vizsgálja..',
   author: 'petaflop.hu',
-  /** UI language: "zh-CN" | "en" */
-  language: 'hu' as 'hu-HU' | 'hu',
+  /** UI language */
+  language: 'hu' as Locale,
   maxPostsOnIndex: 8,
   copyright: {
     enable: true,

@@ -2,7 +2,7 @@ import type { SiteConfig } from '../site.config';
 import { t, type Locale } from '../i18n';
 import type { COPYRIGHT_LICENSE_NOTICES } from '../i18n-licenses';
 
-type CopyrightLicenseKey = keyof (typeof COPYRIGHT_LICENSE_NOTICES)['zh-CN'];
+type CopyrightLicenseKey = keyof (typeof COPYRIGHT_LICENSE_NOTICES)['en'];
 
 const LICENSE_ICONS: Record<string, string> = {
   CC_BY_4_0: 'CC-BY',

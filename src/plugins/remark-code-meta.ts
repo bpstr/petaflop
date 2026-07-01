@@ -1,5 +1,6 @@
 import { visit } from 'unist-util-visit';
 import type { Root } from 'mdast';
+import type {} from 'mdast-util-to-hast';
 import { expandHlLinesTokens } from '../utils/hl-lines';
 
 /** Split `python title="x" hl_lines="2"` fence info into lang + meta for Shiki. */

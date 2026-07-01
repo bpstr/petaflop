@@ -1,5 +1,6 @@
 import { toString } from 'mdast-util-to-string';
 import type { Root, Table } from 'mdast';
+import type {} from 'mdast-util-to-hast';
 
 type TableData = NonNullable<Table['data']> & { caption?: string };
 import { parseTableCaptionLine } from '../utils/table-caption';

@@ -88,8 +88,8 @@ function navCurrent(path: string) {
     <link rel="alternate" type="application/atom+xml" title={`${site.title} Atom Feed`} href={siteHref('/atom.xml')} />
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TXW6XTR8NC"></script>
-    <script>
+    <script async is:inline src="https://www.googletagmanager.com/gtag/js?id=G-TXW6XTR8NC"></script>
+    <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());

@@ -8,7 +8,7 @@ import { badgeClass, featureCardClass } from '../utils/badge';
 
 const blogPosts = await getBlogPosts();
 const indexPosts = blogPosts.slice(0, site.maxPostsOnIndex);
-const locale = site.language === 'hu-HU' ? 'hu' : site.language;
+const locale = site.language;
 const i18n = t(locale);
 const canonicalUrl = new URL('/', Astro.site).href;
 const [leadPost, ...remainingPosts] = indexPosts;
