@@ -26,8 +26,8 @@ const categorySections = CATEGORIES.map((category) => ({
 const latestDate = leadPost ? formatDate(leadPost.data.date, locale) : '';
 const leadUrl = leadPost ? postUrl(leadPost) : siteHref('/archive/');
 const leadTags = leadPost?.data.tags.slice(0, 3) ?? [];
-const primaryVisual = coverPosts[0];
-const secondaryVisual = coverPosts[1];
+const primaryVisual = leadPost;
+const secondaryVisual = coverPosts.find((post) => post.id !== leadPost?.id);
 ---
 
 <BaseLayout title={i18n.pageHome} pageId="index" canonicalUrl={canonicalUrl} hiddenPageTitle>

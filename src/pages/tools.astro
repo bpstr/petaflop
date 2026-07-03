@@ -17,10 +17,31 @@ tools.sort((a, b) => {
     const bf = b.data.featured ? 0 : 1;
     return af - bf || a.data.name.localeCompare(b.data.name);
 });
+
+const categoryLabels = {
+  chat: 'Chat',
+  image: 'Image',
+  design: 'Design',
+  music: 'Music',
+  code: 'Code',
+  research: 'Research',
+  productivity: 'Productivity',
+  video: 'Video',
+  voice: 'Voice',
+  writing: 'Writing',
+  other: 'Other',
+} as const;
+
+const categoryCounts = tools.reduce<Record<string, number>>((counts, tool) => {
+  counts[tool.data.category] = (counts[tool.data.category] ?? 0) + 1;
+  return counts;
+}, {});
+
+const activeCategories = Object.entries(categoryLabels).filter(([category]) => categoryCounts[category]);
 ---
 
 <BaseLayout
-    title={i18n.pageAbout}
+    title={i18n.navTools}
     description={site.description}
     pageId="tools"
     canonicalUrl={canonicalUrl}
@@ -30,30 +51,183 @@ tools.sort((a, b) => {
     <p>Curated list of useful AI tools and platforms.</p>
   </div>
   <div class="post-content">
-    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <section class="tools-filter" aria-label="Filter tools by category">
+      <div class="tools-filter-buttons" data-tools-filters>
+        <button class="tools-filter-button is-active" type="button" data-filter="all" aria-pressed="true">
+          All <span>{tools.length}</span>
+        </button>
+        {activeCategories.map(([category, label]) => (
+          <button class="tools-filter-button" type="button" data-filter={category} aria-pressed="false">
+            {label} <span>{categoryCounts[category]}</span>
+          </button>
+        ))}
+      </div>
+      <p class="tools-filter-count" data-tools-count>{tools.length} tools shown</p>
+    </section>
+
+    <div class="tools-grid grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3" data-tools-grid>
       {tools.map((tool, i) => (
           <a
-            class="feature-card-cream flex flex-col gap-2 rounded-lg border border-hairline p-5 no-underline transition-transform hover:-translate-y-0.5 dark:border-[#2a3a3a]"
+            class="tool-card feature-card-cream flex flex-col gap-1.5 rounded-lg border border-hairline p-3.5 no-underline transition-transform hover:-translate-y-0.5 dark:border-[#2a3a3a]"
             href={tool.data.url}
             target="_blank"
             rel="noopener noreferrer"
+            data-category={tool.data.category}
           >
-            <div class="flex items-center justify-between gap-2">
-              <h2 class="m-0 text-lg font-semibold">{tool.data.name}</h2>
+            <div class="flex items-start justify-between gap-2">
+              <h2 class="m-0 text-base font-semibold leading-tight">{tool.data.name}</h2>
               {tool.data.featured && <span class={`badge-pill ${badgeClass(i)}`}>Featured</span>}
             </div>
 
             {tool.data.provider && (
-                <p class="m-0 text-sm text-muted dark:text-on-dark-soft">{tool.data.provider}</p>
+                <p class="m-0 text-xs text-muted dark:text-on-dark-soft">{tool.data.provider}</p>
             )}
 
             {tool.data.description && (
-                <p class="m-0 text-sm leading-6 text-body dark:text-on-dark-soft">{tool.data.description}</p>
+                <p class="m-0 text-sm leading-5 text-body dark:text-on-dark-soft">{tool.data.description}</p>
             )}
 
-            <p class="m-0 mt-auto pt-2 text-xs font-semibold uppercase tracking-wide text-muted-soft dark:text-on-dark-soft">{tool.data.category}</p>
+            <p class="m-0 mt-auto pt-1 text-xs font-semibold uppercase tracking-wide text-muted-soft dark:text-on-dark-soft">{categoryLabels[tool.data.category]}</p>
           </a>
       ))}
     </div>
   </div>
 </BaseLayout>
+
+<script>
+  const filterRoot = document.querySelector<HTMLElement>("[data-tools-filters]");
+  const countEl = document.querySelector<HTMLElement>("[data-tools-count]");
+  const cards = Array.from(document.querySelectorAll<HTMLElement>("[data-category]"));
+
+  if (filterRoot && countEl) {
+    const buttons = Array.from(filterRoot.querySelectorAll<HTMLButtonElement>("[data-filter]"));
+
+    filterRoot.addEventListener("click", (event) => {
+      const button = (event.target as HTMLElement).closest<HTMLButtonElement>("[data-filter]");
+      if (!button) return;
+
+      const selectedCategory = button.dataset.filter ?? "all";
+      let visibleCount = 0;
+
+      buttons.forEach((filterButton) => {
+        const isActive = filterButton === button;
+        filterButton.classList.toggle("is-active", isActive);
+        filterButton.setAttribute("aria-pressed", String(isActive));
+      });
+
+      cards.forEach((card) => {
+        const isVisible = selectedCategory === "all" || card.dataset.category === selectedCategory;
+        card.hidden = !isVisible;
+        if (isVisible) visibleCount += 1;
+      });
+
+      countEl.textContent = `${visibleCount} ${visibleCount === 1 ? "tool" : "tools"} shown`;
+    });
+  }
+</script>
+
+<style>
+  .tools-filter {
+    display: grid;
+    gap: 10px;
+    margin-bottom: var(--space-md);
+  }
+
+  .tools-filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .tools-filter-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border: 1px solid var(--color-main-border);
+    border-radius: var(--radius-pill);
+    background: var(--color-main-card);
+    color: var(--color-main-text);
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    line-height: 1;
+    min-height: 34px;
+    padding: 8px 12px;
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+  }
+
+  .tools-filter-button span {
+    color: var(--color-main-subtext);
+    font-size: 0.78rem;
+  }
+
+  .tools-filter-button:hover,
+  .tools-filter-button.is-active {
+    border-color: var(--color-primary);
+    background: var(--color-primary);
+    color: #ffffff;
+  }
+
+  .tools-filter-button:hover span,
+  .tools-filter-button.is-active span {
+    color: rgba(255, 255, 255, 0.78);
+  }
+
+  .tools-filter-count {
+    margin: 0;
+    color: var(--color-main-subtext);
+    font-size: 0.9rem;
+  }
+
+  .tool-card,
+  .tool-card:hover,
+  .tool-card:focus {
+    text-decoration: none !important;
+  }
+
+  .post-content .tool-card h2,
+  .post-content .tool-card p {
+    margin: 0;
+    max-width: none;
+    text-align: start;
+  }
+
+  .post-content .tool-card h2 {
+    font-size: 1rem;
+    letter-spacing: 0;
+    line-height: 1.25;
+  }
+
+  .post-content .tool-card p {
+    letter-spacing: 0;
+  }
+
+  .post-content .tool-card p:last-child {
+    margin-top: auto;
+    padding-top: 4px;
+  }
+
+  .tool-card[hidden] {
+    display: none !important;
+  }
+
+  .tool-card .badge-pill {
+    padding: 3px 8px;
+    font-size: 0.7rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .tools-filter-button:hover,
+    .tools-filter-button.is-active {
+      border-color: var(--color-link-dark);
+      background: var(--color-link-dark);
+      color: var(--color-ink);
+    }
+
+    .tools-filter-button:hover span,
+    .tools-filter-button.is-active span {
+      color: rgba(10, 10, 10, 0.68);
+    }
+  }
+</style>
