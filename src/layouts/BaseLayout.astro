@@ -1,5 +1,6 @@
 ---
 import '../styles/style.css';
+import '../styles/source.css';
 import { site } from '../site.config';
 import { siteHref } from '../utils/paths';
 import { t, type Locale } from '../i18n';
@@ -11,12 +12,9 @@ interface Props {
   pageId?: string;
   canonicalUrl?: string;
   noindex?: boolean;
-  /** Show visually-hidden h1 in page-header (home, archive, about). */
   hiddenPageTitle?: boolean;
-  /** ISO date for article Open Graph (post pages). */
   articlePublishedTime?: string;
   ogImage?: string;
-  /** Category slug to highlight in the section bar (category + post pages). */
   activeCategory?: string;
 }
 
@@ -43,7 +41,6 @@ function normalizePath(pathname: string): string {
   return pathname.endsWith('/') ? pathname : `${pathname}/`;
 }
 
-/** Match upstream: prefer `pageId`, then normalized pathname (trailing slash safe). */
 function navCurrent(path: string) {
   const normalized = path.endsWith('/') ? path : `${path}/`;
   const href = siteHref(normalized);
@@ -65,14 +62,9 @@ function navCurrent(path: string) {
     <title>{title} - {site.title}</title>
     <meta name="description" content={description} />
     <meta name="author" content={site.author} />
-    <meta name="color-scheme" content="light dark" />
-    <meta name="theme-color" content="#fffaf0" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#0a1a1a" media="(prefers-color-scheme: dark)" />
-    {noindex ? (
-      <meta name="robots" content="noindex" />
-    ) : (
-      canonicalUrl && <link rel="canonical" href={canonicalUrl} />
-    )}
+    <meta name="color-scheme" content="light" />
+    <meta name="theme-color" content="#ffffff" />
+    {noindex ? <meta name="robots" content="noindex" /> : canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
     <meta property="og:type" content={pageId === 'post' ? 'article' : 'website'} />
     <meta property="og:title" content={`${title} - ${site.title}`} />
     <meta property="og:description" content={description} />
@@ -85,94 +77,110 @@ function navCurrent(path: string) {
         <meta property="article:modified_time" content={articlePublishedTime} />
       </>
     )}
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content={ogImage ? 'summary_large_image' : 'summary'} />
     <meta name="twitter:title" content={`${title} - ${site.title}`} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage || `${siteHref('/og-default.png')}`} />
     <link rel="alternate" type="application/rss+xml" title={`${site.title} RSS Feed`} href={siteHref('/rss.xml')} />
     <link rel="alternate" type="application/atom+xml" title={`${site.title} Atom Feed`} href={siteHref('/atom.xml')} />
 
-    <!-- Google tag (gtag.js) -->
     <script async is:inline src="https://www.googletagmanager.com/gtag/js?id=G-TXW6XTR8NC"></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-TXW6XTR8NC');
     </script>
   </head>
-  <body class={`page-${pageId}`}>
+  <body class={`page-${pageId} source-theme`}>
     <a href="#main-content" class="skip-link">{i18n.skipToContent}</a>
 
-    <header>
+    <div class="gh-viewport">
+      <header class="gh-navigation" data-navigation>
+        <div class="gh-navigation-inner gh-inner">
+          <div class="gh-navigation-brand">
+            <a href={homeHref} class="gh-navigation-logo" aria-label={`${site.title} – ${i18n.navHome}`}>
+              <span class="gh-navigation-logo-mark" aria-hidden="true">P</span>
+              <span>{site.title}</span>
+            </a>
+          </div>
 
-      <div class="header-inner">
-        <a href={homeHref} class="site-title">{site.title}</a>
-        <nav class="desktop-nav" aria-label={i18n.mainNavigation}>
-          <a href={siteHref('/')} aria-current={navCurrent('/') ? 'page' : undefined}>{i18n.navHome}</a>
-          <a href={siteHref('/categories/')} aria-current={navCurrent('/categories') ? 'page' : undefined}>{i18n.navCategories}</a>
-          <a href={siteHref('/tools/')} aria-current={navCurrent('/tools') ? 'page' : undefined}>{i18n.navTools}</a>
-          <a href={siteHref('/archive/')} aria-current={navCurrent('/archive') ? 'page' : undefined}>{i18n.navArchive}</a>
-          <a href={siteHref('/tags/')} aria-current={navCurrent('/tags') ? 'page' : undefined}>{i18n.navTags}</a>
-          <a href={siteHref('/about/')} aria-current={navCurrent('/about') ? 'page' : undefined}>{i18n.navAbout}</a>
-        </nav>
-        <details class="mobile-nav-menu">
-          <summary aria-label={i18n.navMenu}>
-            <span class="visually-hidden">{i18n.navMenu}</span>
-            <span class="hamburger-icon" aria-hidden="true"></span>
-          </summary>
-          <nav class="mobile-nav-links" aria-label={i18n.mainNavigation}>
-            <a href={siteHref('/')} aria-current={navCurrent('/') && pageId === 'index' ? 'page' : undefined}>{i18n.navHome}</a>
+          <nav class="gh-navigation-menu desktop-nav" aria-label={i18n.mainNavigation}>
+            <a href={siteHref('/')} aria-current={navCurrent('/') ? 'page' : undefined}>{i18n.navHome}</a>
             <a href={siteHref('/categories/')} aria-current={navCurrent('/categories') ? 'page' : undefined}>{i18n.navCategories}</a>
             <a href={siteHref('/tools/')} aria-current={navCurrent('/tools') ? 'page' : undefined}>{i18n.navTools}</a>
             <a href={siteHref('/archive/')} aria-current={navCurrent('/archive') ? 'page' : undefined}>{i18n.navArchive}</a>
-            <a href={siteHref('/tags/')} aria-current={navCurrent('/tags') ? 'page' : undefined}>{i18n.navTags}</a>
             <a href={siteHref('/about/')} aria-current={navCurrent('/about') ? 'page' : undefined}>{i18n.navAbout}</a>
           </nav>
-        </details>
-      </div>
-      <div class="header-bottom">
-        <nav class="category-nav" aria-label={i18n.categoryNavLabel}>
-          <div class="category-nav-inner">
+
+          <div class="gh-navigation-actions">
+            <a class="gh-icon-button" href={siteHref('/archive/')} aria-label={i18n.navArchive} title={i18n.navArchive}>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4 4"></path></svg>
+            </a>
+            <a class="gh-button gh-button-small" href={siteHref('/feed/')}>{i18n.rssSubscribe}</a>
+
+            <details class="mobile-nav-menu">
+              <summary aria-label={i18n.navMenu}>
+                <span class="visually-hidden">{i18n.navMenu}</span>
+                <span class="hamburger-icon" aria-hidden="true"></span>
+              </summary>
+              <nav class="mobile-nav-links" aria-label={i18n.mainNavigation}>
+                <a href={siteHref('/')}>{i18n.navHome}</a>
+                <a href={siteHref('/categories/')}>{i18n.navCategories}</a>
+                <a href={siteHref('/tools/')}>{i18n.navTools}</a>
+                <a href={siteHref('/archive/')}>{i18n.navArchive}</a>
+                <a href={siteHref('/tags/')}>{i18n.navTags}</a>
+                <a href={siteHref('/about/')}>{i18n.navAbout}</a>
+              </nav>
+            </details>
+          </div>
+        </div>
+
+        <nav class="gh-topic-nav" aria-label={i18n.categoryNavLabel}>
+          <div class="gh-topic-nav-inner gh-inner">
             {CATEGORIES.map((category) => (
-                <a
-                    href={categoryUrl(category.slug)}
-                    aria-current={activeCategory === category.slug ? 'page' : undefined}
-                >
-                  {category.label}
-                </a>
+              <a href={categoryUrl(category.slug)} aria-current={activeCategory === category.slug ? 'page' : undefined}>
+                {category.label}
+              </a>
             ))}
           </div>
         </nav>
-      </div>
-    </header>
+      </header>
 
+      <main id="main-content" class="gh-site-main">
+        {hiddenPageTitle && <h1 class="visually-hidden">{title}</h1>}
+        <div class="gh-main-shell">
+          <div class="gh-main-content"><slot /></div>
+          <slot name="toc" />
+        </div>
+      </main>
 
-    <main id="main-content">
-      <div class="main-layout">
-        <div class="content-area">
-          {hiddenPageTitle && (
-            <div class="page-header">
-              <h1 class="visually-hidden">{title}</h1>
-            </div>
-          )}
-          <slot />
+      <footer class="gh-footer gh-outer">
+        <div class="gh-footer-inner gh-inner">
+          <div class="gh-footer-brand">
+            <a href={homeHref} class="gh-footer-logo">{site.title}</a>
+            <p>{site.description}</p>
+          </div>
+          <div class="gh-footer-columns">
+            <nav aria-label={i18n.mainNavigation}>
+              <h2>Magazin</h2>
+              <a href={siteHref('/archive/')}>{i18n.navArchive}</a>
+              <a href={siteHref('/categories/')}>{i18n.navCategories}</a>
+              <a href={siteHref('/tags/')}>{i18n.navTags}</a>
+            </nav>
+            <nav aria-label="Petaflop">
+              <h2>Petaflop</h2>
+              <a href={siteHref('/tools/')}>{i18n.navTools}</a>
+              <a href={siteHref('/about/')}>{i18n.navAbout}</a>
+              <a href={siteHref('/feed/')}>{i18n.rssSubscribe}</a>
+            </nav>
+          </div>
         </div>
-        <slot name="toc" />
-      </div>
-    </main>
-
-    <footer>
-      <div class="footer-content">
-        <div class="footer-left">
-          <span class="copyright-info">&copy; {year} {site.author}.</span>
+        <div class="gh-footer-bar gh-inner">
+          <span>&copy; {year} {site.author}</span>
+          <a href="#main-content">{i18n.backToTop}</a>
         </div>
-        <div class="footer-right">
-          <a href={siteHref('/feed/')}>{i18n.rssSubscribe}</a>
-          <a href="#main-content" class="back-to-top">{i18n.backToTop}</a>
-        </div>
-      </div>
-    </footer>
+      </footer>
+    </div>
   </body>
 </html>
