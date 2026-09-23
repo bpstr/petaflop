@@ -1,46 +1,40 @@
 ---
 import type { Post } from '../utils/posts';
-import { formatDate, postCategoryUrl, postUrl, tagUrl } from '../utils/posts';
+import { formatDate, postCategoryUrl, postUrl } from '../utils/posts';
 import { site } from '../site.config';
-import { badgeClass } from '../utils/badge';
 import { categoryLabel } from '../utils/categories';
 
 interface Props {
   post: Post;
+  variant?: 'list' | 'grid' | 'compact';
+  eager?: boolean;
 }
 
-const { post } = Astro.props;
+const { post, variant = 'list', eager = false } = Astro.props;
 const url = postUrl(post);
 const dateStr = formatDate(post.data.date, site.language);
 ---
 
-<article class="post-list-item" data-href={url}>
-  <h2 class="post-title">
-    <a href={url} class="post-title-link">{post.data.title}</a>
-  </h2>
-  <div class="post-list-meta-line">
-    <a href={postCategoryUrl(post)} class="category-tag">{categoryLabel(post.data.category)}</a>
-    <span class="meta-date-wrapper">{dateStr}</span>
-    {post.data.tags.length > 0 && (
-      <div class="tags-wrapper">
-        {post.data.tags.map((tag, i) => (
-          <a href={tagUrl(tag)} class={`badge-pill ${badgeClass(i)}`}>{tag}</a>
-        ))}
-      </div>
+<article class={`gh-card is-${variant}${post.data.cover ? ' has-image' : ' no-image'}`}>
+  <a class="gh-card-link" href={url}>
+    {post.data.cover && (
+      <figure class="gh-card-image">
+        <img
+          src={post.data.cover}
+          alt={post.data.title}
+          loading={eager ? 'eager' : 'lazy'}
+          decoding="async"
+        />
+      </figure>
     )}
-  </div>
-  {post.data.summary && <p class="post-excerpt">{post.data.summary}</p>}
+    <div class="gh-card-wrapper">
+      <p class="gh-card-tag">{categoryLabel(post.data.category)}</p>
+      <h2 class="gh-card-title">{post.data.title}</h2>
+      {post.data.summary && <p class="gh-card-excerpt">{post.data.summary}</p>}
+      <footer class="gh-card-meta">
+        <span>{site.author}</span>
+        <time datetime={post.data.date.toISOString()}>{dateStr}</time>
+      </footer>
+    </div>
+  </a>
 </article>
-<script>
-  document.addEventListener("click", (e) => {
-    const target = e.target as HTMLElement | null;
-    if (!target) return;
-
-    const article = target.closest<HTMLElement>(".post-list-item");
-    if (!article) return;
-
-    if (target.closest("a")) return;
-
-    if (article.dataset.href) window.location.href = article.dataset.href;
-  });
-</script>

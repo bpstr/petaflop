@@ -18,7 +18,6 @@ import {
   type Post,
 } from '../../utils/posts';
 import { render } from 'astro:content';
-import { badgeClass } from '../../utils/badge';
 import { categoryLabel } from '../../utils/categories';
 
 export async function getStaticPaths() {
@@ -37,17 +36,17 @@ interface Props {
 const { post, allBlogPosts } = Astro.props;
 const { Content, headings } = await render(post);
 const { prev, next } = getAdjacentPosts(allBlogPosts, post);
-const relatedPosts = getRelatedPosts(allBlogPosts, post);
+const relatedPosts = getRelatedPosts(allBlogPosts, post).slice(0, 3);
 const i18n = t(site.language);
 const canonicalUrl = absoluteUrl(`/posts/${postSlug(post)}/`);
 const dateIso = post.data.date.toISOString().split('T')[0];
 const articlePublishedIso = post.data.date.toISOString();
-const tocHeadings = headings.map((h) => ({
-  depth: h.depth,
-  slug: h.slug,
-  text: h.text,
+const tocHeadings = headings.map((heading) => ({
+  depth: heading.depth,
+  slug: heading.slug,
+  text: heading.text,
 }));
-const hasToc = tocHeadings.some((h) => h.depth >= 1 && h.depth <= 4);
+const hasToc = tocHeadings.some((heading) => heading.depth >= 1 && heading.depth <= 4);
 ---
 
 <BaseLayout
@@ -59,92 +58,94 @@ const hasToc = tocHeadings.some((h) => h.depth >= 1 && h.depth <= 4);
   ogImage={post.data.cover}
   activeCategory={post.data.category}
 >
-  <article class="post-article" itemscope itemtype="https://schema.org/Article">
+  <article class="gh-article" itemscope itemtype="https://schema.org/Article">
     <link itemprop="mainEntityOfPage" href={canonicalUrl} />
     <meta itemprop="description" content={post.data.summary ?? site.description} />
     <meta itemprop="author" content={site.author} />
     <meta itemprop="publisher" content={site.title} />
 
-    <div class="page-header">
-      {
-          post.data.cover && (
-              <img
-                  src={post.data.cover}
-                  alt={post.data.title}
-              />
-          )
-      }
-      <h1 itemprop="headline">{post.data.title}</h1>
-      <div class="post-meta">
-        <div class="meta-container">
-          <a href={postCategoryUrl(post)} class="category-tag">{categoryLabel(post.data.category)}</a>
-          <time class="meta-date" datetime={dateIso} itemprop="datePublished dateModified">
-            {formatDate(post.data.date, site.language)}
-          </time>
+    <header class={`gh-article-header gh-outer${post.data.cover ? ' has-image' : ' no-image'}`}>
+      <div class="gh-article-header-inner gh-inner">
+        <div class="gh-article-header-content">
+          <a href={postCategoryUrl(post)} class="gh-article-tag">{categoryLabel(post.data.category)}</a>
+          <h1 itemprop="headline">{post.data.title}</h1>
+          {post.data.summary && <p class="gh-article-excerpt">{post.data.summary}</p>}
+          <div class="gh-article-meta">
+            <span>{site.author}</span>
+            <time datetime={dateIso} itemprop="datePublished dateModified">
+              {formatDate(post.data.date, site.language)}
+            </time>
+          </div>
           {post.data.tags.length > 0 && (
-            <div class="meta-tags">
-              <ul class="tags-list">
-                {post.data.tags.map((tag, i) => (
-                  <li>
-                    <a href={tagUrl(tag)} class={`badge-pill ${badgeClass(i)}`}>{tag}</a>
-                  </li>
-                ))}
-              </ul>
+            <div class="gh-article-tags" aria-label={i18n.navTags}>
+              {post.data.tags.map((tag) => <a href={tagUrl(tag)}>#{tag}</a>)}
             </div>
           )}
         </div>
+
+        {post.data.cover && (
+          <figure class="gh-article-image">
+            <img src={post.data.cover} alt={post.data.title} loading="eager" decoding="async" />
+          </figure>
+        )}
       </div>
+    </header>
 
-      {hasToc && (
-        <details class="mobile-toc">
-          <summary>{i18n.toc}</summary>
-          <nav class="mobile-toc-content" aria-label={i18n.toc}>
-            <TocNav headings={tocHeadings} />
-          </nav>
-        </details>
-      )}
+    <div class="gh-article-body gh-outer">
+      <div class="gh-article-body-inner gh-inner">
+        {hasToc && (
+          <details class="mobile-toc">
+            <summary>{i18n.toc}</summary>
+            <nav class="mobile-toc-content" aria-label={i18n.toc}>
+              <TocNav headings={tocHeadings} />
+            </nav>
+          </details>
+        )}
+
+        <div class="post-content gh-content" itemprop="articleBody">
+          <Content />
+        </div>
+
+        <Copyright postTitle={post.data.title} canonicalUrl={canonicalUrl} />
+      </div>
     </div>
-
-    <div class="post-content" itemprop="articleBody">
-      <Content />
-    </div>
-
-    <Copyright postTitle={post.data.title} canonicalUrl={canonicalUrl} />
 
     {relatedPosts.length > 0 && (
-      <section class="related-posts" aria-labelledby="related-posts-heading">
-        <h2 id="related-posts-heading" class="related-posts-title">{i18n.relatedPosts}</h2>
-        <div class="post-list related-posts-list">
-          {relatedPosts.map((relatedPost) => <PostCard post={relatedPost} />)}
+      <section class="gh-related gh-outer" aria-labelledby="related-posts-heading">
+        <div class="gh-inner">
+          <div class="gh-section-heading">
+            <h2 id="related-posts-heading">{i18n.relatedPosts}</h2>
+          </div>
+          <div class="gh-topic-grid">
+            {relatedPosts.map((relatedPost) => <PostCard post={relatedPost} variant="grid" />)}
+          </div>
         </div>
       </section>
     )}
 
     {(prev || next) && (
-      <nav class="post-navigation">
-        {prev ? (
-          <a href={postUrl(prev)} class="nav-link nav-prev">
-            <small>← {i18n.prevPost}</small>
-            <h3>{prev.data.title}</h3>
-          </a>
-        ) : (
-          <div class="nav-link-placeholder" />
-        )}
-        {next ? (
-          <a href={postUrl(next)} class="nav-link nav-next">
-            <small>{i18n.nextPost} →</small>
-            <h3>{next.data.title}</h3>
-          </a>
-        ) : (
-          <div class="nav-link-placeholder" />
-        )}
+      <nav class="gh-post-navigation gh-outer" aria-label="Cikk navigáció">
+        <div class="gh-post-navigation-inner gh-inner">
+          {prev ? (
+            <a href={postUrl(prev)} class="gh-post-navigation-link is-prev">
+              <small>← {i18n.prevPost}</small>
+              <strong>{prev.data.title}</strong>
+            </a>
+          ) : <span />}
+          {next ? (
+            <a href={postUrl(next)} class="gh-post-navigation-link is-next">
+              <small>{i18n.nextPost} →</small>
+              <strong>{next.data.title}</strong>
+            </a>
+          ) : <span />}
+        </div>
       </nav>
     )}
   </article>
 
   {hasToc && (
-    <nav slot="toc" class="toc-area" aria-label={i18n.toc}>
-      <h3>{i18n.toc}</h3>
+    <nav slot="toc" class="gh-post-toc" aria-label={i18n.toc}>
+      <h2>{i18n.toc}</h2>
       <TocNav headings={tocHeadings} />
     </nav>
   )}
