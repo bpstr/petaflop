@@ -8,7 +8,7 @@ export const site = {
   repoSubpath: '',
   title: 'Petaflop',
   description:
-    'A Petaflop.hu a mesterséges intelligencia forradalmát mozgató hatalmas számítási teljesítményt vizsgálja..',
+    'Magyar magazin az AI-ról, a technológiáról és a fejlesztői eszközökről. Hírek, magyarázatok és gyakorlati útmutatók.',
   author: 'petaflop.hu',
   /** UI language */
   language: 'hu' as Locale,

@@ -1,112 +1,67 @@
-# astro-theme-aonote
+# Petaflop
 
-English | [中文](README.zh-CN.md)
+Petaflop.hu is a Hungarian magazine about AI, technology, and developer tools. It covers useful product changes, software-building tools, open-source projects, infrastructure, relevant hardware, and research with clear explanations and verifiable sources. Non-AI technology stories are welcome when they matter to readers or developers.
 
-[![Live Demo](https://img.shields.io/badge/demo-live-0ea5e9)](https://astro-theme-aonote.vercel.app)
-[![Astro](https://img.shields.io/badge/Astro-6-BC52EE?logo=astro&logoColor=white)](https://astro.build)
+The site is built with Astro 6 using the Aonote theme. This repository contains the publication's content, application, and shared editorial workflow.
 
-**Static blog theme for [Astro](https://astro.build) 6** — GFM, MathML math, Shiki code blocks, archive, tags, and RSS/Atom.
+## Editorial workflow
 
-| | |
+Start with [AGENTS.md](AGENTS.md), [the project guide](docs/AI_ASSISTANT_GUIDE.md), and [the editorial policy](docs/editorial-policy.md).
+
+Four repository skills support future articles:
+
+| Skill | Purpose |
 | --- | --- |
-| **Live demo** | https://astro-theme-aonote.vercel.app |
-| **Upstream** | https://github.com/runsli/Aonote |
+| [magazine-writing](.agents/skills/magazine-writing/SKILL.md) | Topic research, angle, reader, structure, tone, and publication review |
+| [technical-review](.agents/skills/technical-review/SKILL.md) | Evidence, versions, APIs, benchmarks, costs, safe examples, and honest test claims |
+| [editorial-visuals](.agents/skills/editorial-visuals/SKILL.md) | Useful images, diagrams, charts, rights, captions, and accessibility |
+| [humanizer](.agents/skills/humanizer/SKILL.md) | Natural prose without factual or technical drift |
 
-## Screenshots
+See the [skill index](.agents/skills/README.md) for usage, the [research baseline](.agents/skills/magazine-writing/references/research.md) for primary sources, and the [story brief](.agents/skills/magazine-writing/templates/story-brief.md) and [publication review](.agents/skills/magazine-writing/templates/publication-review.md) for reusable templates.
 
-| Home | Post (TOC, MathML, code) |
-| --- | --- |
-| ![Home](docs/screenshots/home.png) | ![Post](docs/screenshots/post.png) |
+These skills are instructions, not automatic tests. Clients without repository-skill discovery should read their files explicitly. Humanizer is a pinned, Hungarian-adapted version of an upstream skill; its [provenance](.agents/skills/humanizer/UPSTREAM.md) and [MIT license](.agents/skills/humanizer/LICENSE) are included. Shared skills live in `.agents/skills/`, not the retired `.claude` directory.
 
-## Features
+## Content and publishing
 
-- GFM: tables, task lists, footnotes, definition lists, admonitions
-- Math as **MathML** (temml), no KaTeX runtime CSS
-- Shiki code blocks with Aonote-style metadata (title, line highlight, diff)
-- Archive, tags, RSS + Atom, sitemap
-- Light / dark theme, zh-CN / en UI strings
-- Subpath-aware links when deployed under a repo path
+Articles live in `src/content/posts/YYYY-MM/slug.md`. The month folder is part of the published URL, so preserve existing file locations and publication dates. The five sections remain Hírek, Kiadások, Tesztek, Útmutatók, and Elemzések; topics are expressed through consistently cased tags.
 
-## Quick start
+The [scheduled publishing brief](docs/news-publishing.md) defines short daily news, freshness, deduplication, direct-main write scope, and run history. Developer and technology news are included without turning routine briefs into long tutorials. Longer features and guides use the same skills in separately requested work.
 
-### Use as Astro template (recommended)
+Tool directory entries live in `src/content/tools/`, static pages in `src/content/pages/`, and article assets in `public/static/posts/`. Read `src/content.config.ts` before editing frontmatter.
+
+## Local development
+
+Use Node.js `>=22.12.0` and npm:
 
 ```bash
-npm create astro@latest my-blog -- --template runsli/astro-theme-aonote
-cd my-blog
-npm install
+git clone https://github.com/bpstr/petaflop.git
+cd petaflop
+npm ci
 npm run dev
 ```
 
-### Clone this repo
-
 ```bash
-git clone https://github.com/runsli/astro-theme-aonote.git
-cd astro-theme-aonote
-npm install
-npm run dev
+npm run check
+npm run build
+npm run preview
 ```
 
-Open http://localhost:4321 and edit:
+`check` runs Astro validation; `build` produces `dist/`; `preview` serves the built site. Neither replaces editorial fact-checking. The existing `.github/workflows/deploy.yml` builds and deploys main pushes to GitHub Pages. Distinguish a commit, a successful build, and a successful deployment when reporting results.
 
-1. `src/site.config.ts` — title, `baseUrl`, language, copyright
-2. `src/content/posts/` — your Markdown posts
-3. `src/content/pages/about.md` — about page
+## Project map
 
-**Node:** ≥ 22.12.0 (Astro 6). Node 22 LTS is recommended.
-
-## Deploy
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frunsli%2Fastro-theme-aonote)
-
-1. Import the repo on [Vercel](https://vercel.com/new) or [Netlify](https://app.netlify.com/start) (or use the button above).
-2. **Build:** `npm run build` · **Output:** `dist` (framework preset: Astro).
-3. After deploy, set `baseUrl` in `src/site.config.ts` to your production URL.
-
-`vercel.json` is included (CSP headers). For Netlify: same build command and publish directory.
-
-To fork via GitHub: enable **Template repository** under repo Settings, then **Use this template** or `npm create astro@latest -- --template runsli/astro-theme-aonote`.
-
-## Customize
-
-| What | Where |
+| Location | Purpose |
 | --- | --- |
-| Site title, URL, locale | `src/site.config.ts` |
-| UI strings | `src/i18n.ts` |
-| Global layout / nav | `src/layouts/BaseLayout.astro` |
-| Theme CSS | `src/styles/aonote.css` |
-| Markdown pipeline | `src/integrations/aonote-markdown.ts` |
-| Feed limits | `src/utils/feed.ts` |
-| `robots.txt` / sitemap URL | `src/pages/robots.txt.ts` (uses `site.config.ts`) |
+| `src/site.config.ts` | Site metadata, URL, and language |
+| `src/content.config.ts` | Content schemas |
+| `src/utils/categories.ts` | Editorial section definitions |
+| `src/layouts/`, `src/components/`, `src/pages/` | Layout, components, and routes |
+| `src/integrations/`, `src/plugins/` | Markdown rendering |
+| `.agents/skills/` | Editorial skills and reference material |
+| `docs/` | Project, editorial, and publishing documentation |
 
-## Project layout
+## Credits and licensing
 
-```text
-src/
-├── site.config.ts
-├── content/
-│   ├── posts/          # Blog articles
-│   └── pages/          # about, 404
-├── layouts/
-├── components/
-├── pages/              # Routes
-├── integrations/       # Markdown / Shiki
-└── styles/aonote.css
-```
+The application derives from [Aonote](https://github.com/runsli/Aonote); original design and styles are credited to runsli. The repository [LICENSE](LICENSE) remains unchanged. `README.zh-CN.md` contains the original theme documentation rather than a synchronized Petaflop editorial guide.
 
-## Scripts
-
-| Command | Action |
-| --- | --- |
-| `npm run dev` | Dev server |
-| `npm run build` | Production build → `dist/` |
-| `npm run preview` | Preview build |
-| `npm run check` | `astro check` |
-
-## Contributing
-
-See [CONTRIBUTING.md](CONTRIBUTING.md).
-
-## License
-
-MIT — see [LICENSE](LICENSE). Original Aonote design and styles © [runsli](https://github.com/runsli).
+The site's content-license configuration remains in `src/site.config.ts`. Third-party images and the adapted Humanizer retain their own applicable notices; do not assume one repository-wide license overrides them.

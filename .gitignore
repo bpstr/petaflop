@@ -20,3 +20,6 @@ pnpm-debug.log*
 .DS_Store
 
 .idea
+
+# Local agent configuration; shared editorial skills live in .agents/skills/
+/.claude/

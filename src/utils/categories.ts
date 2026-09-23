@@ -15,27 +15,27 @@ export const CATEGORIES = [
   {
     slug: 'hirek',
     label: 'Hírek',
-    description: 'Iparági hírek, üzleti, befektetési és szabályozási fejlemények az AI világából.',
+    description: 'Fontos technológiai, iparági és szabályozási változások az AI és a szoftverek világából.',
   },
   {
     slug: 'kiadasok',
     label: 'Kiadások',
-    description: 'Új modellek, termékek és funkciók bejelentései és indulásai.',
+    description: 'Új modellek, alkalmazások, fejlesztői eszközök és API-k megjelenései.',
   },
   {
     slug: 'tesztek',
     label: 'Tesztek',
-    description: 'Benchmarkok, összehasonlítások és gyakorlati értékelések.',
+    description: 'Eszközök, modellek és technológiák összehasonlítása, a mérési módszerekkel és korlátokkal együtt.',
   },
   {
     slug: 'utmutatok',
     label: 'Útmutatók',
-    description: 'Gyakorlati útmutatók, bemutatók és magyarázatok.',
+    description: 'Gyakorlati magyarázatok és útmutatók AI-felhasználóknak és szoftverfejlesztőknek.',
   },
   {
     slug: 'elemzesek',
     label: 'Elemzések',
-    description: 'Mélyfúrások, háttérelemzések és vélemények.',
+    description: 'Kutatási eredmények, technológiai döntések és a hírek mögötti összefüggések.',
   },
 ] as const satisfies readonly Category[];
 

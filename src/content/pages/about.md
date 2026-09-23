@@ -1,49 +1,25 @@
 ---
-title: About Petaflop.hu
+title: A Petaflopról
 date: 2026-06-18
-summary: A Petaflop.hu küldetése, fókusza és szerkesztési alapelvei az AI hírek és eszközök világában.
+summary: Magyar magazin az AI-ról, a technológiáról és a fejlesztői eszközökről, kíváncsi olvasóknak és gyakorló fejlesztőknek.
 ---
 
-A **Petaflop.hu** egy mesterséges intelligenciával foglalkozó online magazin, amely az AI világának híreit, eszközeit, trendjeit és gyakorlati felhasználási lehetőségeit mutatja be közérthetően és naprakészen.
+A Petaflop az AI, a technológia és a szoftverfejlesztés újdonságairól ír magyarul. Az érdekel bennünket, mit lehet kezdeni egy új eszközzel, hogyan működik egy technológia, és mely korlátokat érdemes ismerni a kipróbálása előtt.
 
-Célunk, hogy hidat képezzünk a gyorsan fejlődő AI-technológiák és a mindennapi felhasználók, fejlesztők, valamint döntéshozók között.
+Azoknak írunk, akik AI-eszközöket használnak a munkájukban, szoftvert építenek, vagy szeretnék érteni a technológiai híreket. Egy rövid bejelentésnél gyorsan elmondjuk a lényeget. Egy összetettebb témánál teret kap a magyarázat, a példa és az ellenérv is.
 
-## Szerkesztési elvek
+## Miről olvashatsz?
 
-- **Emberközpontú AI-tartalom:** A technológiai híreket érthető, kontextusba helyezett formában közöljük.
-- **Gyors és releváns frissítések:** A mesterséges intelligencia területén zajló változásokat folyamatosan követjük.
-- **Gyakorlati fókusz:** Nem csak híreket közlünk, hanem eszközöket, workflow-okat és valós felhasználási példákat is bemutatunk.
-- **Független szemlélet:** Kritikus és kiegyensúlyozott megközelítést alkalmazunk az AI hype és valóság között.
+Az AI-modellek és alkalmazások mellett fejlesztői eszközökkel, kódoló ügynökökkel, API-kkal és nyílt forrású projektekkel foglalkozunk. Helyet kapnak az adatbázisok, a felhős szolgáltatások, a biztonság, a teljesítmény és az ezekhez kapcsolódó hardverek is. Egy hasznos technológiai történethez nem kell mindenáron AI-kapcsolatot keresni.
 
-## Tartalmi fókusz
+A híreket és kiadásokat tesztek, útmutatók és elemzések egészítik ki. A kutatási eredményeknél azt is elmagyarázzuk, mit vizsgáltak a szerzők, és mire nem ad választ a kísérlet.
 
-A Petaflop.hu fő témái:
+## Hogyan írunk?
 
-- AI hírek és iparági fejlemények
-- Nagy nyelvi modellek (LLM-ek) és alkalmazásaik
-- Generatív AI (szöveg, kép, videó, hang)
-- Fejlesztői eszközök és API-k
-- AI-alapú produktivitási megoldások
-- Etikai, társadalmi és gazdasági hatások
+A fontos állításokat eredeti forrásokhoz kötjük: dokumentációhoz, kiadási jegyzethez, kutatáshoz vagy az adott változás más közvetlen bizonyítékához. A gyártó mérését gyártói eredményként kezeljük. Csak akkor állítjuk, hogy valamit kipróbáltunk, ha a teszt valóban megtörtént; a dokumentáció alapján készült bemutatót ettől megkülönböztetjük.
 
-## Célközönség
+A közérthetőség nem jelent pontatlanságot. Megőrizzük a verziószámokat, az elérhetőségi feltételeket és a fontos korlátozásokat. A szakkifejezéseket ott magyarázzuk el, ahol segítenek megérteni a történetet.
 
-A Petaflop.hu tartalmai azoknak szólnak, akik:
+Képet, képernyőfotót vagy diagramot akkor használunk, ha hozzátesz a cikkhez. Feltüntetjük a szükséges forrást és jelöljük az illusztrációt, különösen, ha AI-val készült. Generált képpel nem bizonyítunk termékfunkciót vagy mérési eredményt.
 
-- szeretnék megérteni az AI működését és hatásait,
-- használják vagy integrálják az AI-t a munkájukba,
-- érdeklődnek a technológiai trendek iránt,
-- vagy egyszerűen szeretnének naprakészek maradni egy gyorsan változó világban.
-
-## Fejlesztési irányok
-
-A jövőben a Petaflop.hu célja:
-
-- interaktív AI-eszközök bemutatása,
-- gyakorlati tutorialok és workflow-leírások bővítése,
-- közösségi tudásmegosztás erősítése,
-- valamint egy letisztult, gyors és fókuszált olvasói élmény fenntartása.
-
----
-
-A Petaflop.hu egyszerre hírportál, tudástár és inspirációs felület – az AI korszak mindennapi értelmezéséhez.
+A tartalom előkészítésében AI-eszközök is részt vehetnek. Ez nem helyettesíti a forrásellenőrzést, és nem jelent ember által elvégzett tesztet vagy jóváhagyást. Az érdemi ténybeli hibákat látható, dátumozott helyesbítéssel javítjuk.
