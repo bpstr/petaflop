@@ -12,11 +12,15 @@ On every run, read root [AGENTS.md](../AGENTS.md), [the shared project guide](AI
 
 ## Cadence, volume, and subjects
 
-The scheduler owns the actual cadence. At the 2026-09-23 review, it is daily around 18:00 in `Europe/Budapest`, with flexible timing. Do not create a second schedule or change its time while publishing.
+The scheduler owns the actual cadence. As requested on 2026-10-02, the job is scheduled daily at 08:00 in `Europe/Budapest`, with exact scheduled timing and the same local hour across daylight-saving changes. Do not create a second schedule or change its time while publishing.
 
 Publish 1–3 worthwhile posts per run, never more than three from this job on a local calendar date. Zero is correct when no fresh, well-supported story clears the quality bar. Do not fill a quota with weak news or an unsolicited long tutorial.
 
 There is no fixed consumer/developer ratio. Consider the recent mix so AI applications, developer tools, broader technology, and accessible research all receive coverage over time. Major providers such as Anthropic, OpenAI, xAI, and Google's Gemini remain useful sources, alongside other market leaders, smaller relevant vendors, and open-source maintainers. Popular questions and viral topics are discovery signals, not proof of importance or truth.
+
+Explicitly investigate three discovery tracks on every run: consequential AI news and new user-facing capabilities; innovations, useful research, inventive products and developer tools; and verified viral happenings in AI and technology, including unusual demos, creative uses, striking successes or failures, and meaningful community trends. Consider the mix over time without forcing one published story per track. Keep compact selection/skip reasons in the daily record, including when a track has no publishable candidate.
+
+For viral stories, follow public discussions and discovery surfaces to original creator posts or other primary evidence. Check provenance, original dates, and observable dated traction before describing a story as viral; never invent engagement counts or public reactions. A widely shared demo does not establish general reliability. Identify synthetic, staged, or edited material when established and relevant. The interesting detail and its reader consequence must survive verification; popularity alone does not clear the publication gate.
 
 Favor practical changes: what people can now use, what developers can build or simplify, what a consequential limitation or migration means, or what researchers actually demonstrated. Deprioritize rumors, executive drama, uncontextualized fundraising, dense leaderboard trivia, and promotional release-note rewrites. Do not deprioritize a meaningful story merely because its audience is technical.
 
