@@ -16,7 +16,7 @@ Reuse existing exact tag casing; inspect current content before introducing a ge
 
 ## Formats and depth
 
-The daily publisher remains a short-news service: normally 100–180 body words, up to 220 when an essential technical or research caveat needs space. It may cover any in-scope subject. It does not automatically become a tutorial publisher.
+The daily publisher produces five distinct posts, prioritizing AI news and verified viral AI topics. It combines concise briefs, reported news, and focused explainers using the lengths in [news-publishing.md](news-publishing.md). Depth follows evidence and reader value. This does not authorize untested hands-on reviews or extensive implementation tutorials.
 
 For separately requested work, these are starting points, not quotas: a focused explainer may need 400–800 words; a reported feature or technical comparison 800–1,500; a practical guide enough space for prerequisites, a working path, and limitations. Shorten or expand to fulfill the story's promise. Do not pad a brief into a feature or squeeze a necessary warning out of a word budget.
 

@@ -1,8 +1,8 @@
-# Petaflop short news publishing
+# Petaflop daily magazine publishing
 
 ## Purpose and authorization
 
-Publish short, fascinating, factual Hungarian news about AI, technology, and developer tools. Stories may serve everyday users or developers. APIs, coding tools, infrastructure, security, hardware, open-source releases, and consequential non-AI technology are eligible when there is a concrete reader benefit or important change to explain.
+Publish five distinct, fascinating, factual Hungarian posts per daily edition, prioritizing AI news, verified viral AI topics, and useful innovations. Stories may serve everyday users or developers. APIs, coding tools, infrastructure, security, hardware, open-source releases, and consequential non-AI technology are eligible when there is a concrete reader benefit or important change to explain.
 
 The owner has authorized the scheduled publisher to create finished posts directly on `main` in `bpstr/petaflop` without per-post approval. Its writes are limited to new post files and its own run records. This does not authorize modifying existing articles, application code, agent skills, workflows, dependencies, secrets, account settings, paid services, other repositories, or external publishing platforms.
 
@@ -14,7 +14,7 @@ On every run, read root [AGENTS.md](../AGENTS.md), [the shared project guide](AI
 
 The scheduler owns the actual cadence. As requested on 2026-10-02, the job is scheduled daily at 08:00 in `Europe/Budapest`, with exact scheduled timing and the same local hour across daylight-saving changes. Do not create a second schedule or change its time while publishing.
 
-Publish 1–3 worthwhile posts per run, never more than three from this job on a local calendar date. Zero is correct when no fresh, well-supported story clears the quality bar. Do not fill a quota with weak news or an unsolicited long tutorial.
+On 2026-10-06 the owner expanded this job to five posts per daily edition in one scheduled run, never more than five on a Budapest calendar date including retries. This supersedes the former 1–3 limit. Follow [daily-editorial-workflow.md](daily-editorial-workflow.md): research a diverse candidate pool, select five plus backups, replace blocked candidates, and complete the edition. If the bounded replacement process still cannot produce five verified stories, publish the ready subset and explain the shortfall. Never invent news to reach five.
 
 There is no fixed consumer/developer ratio. Consider the recent mix so AI applications, developer tools, broader technology, and accessible research all receive coverage over time. Major providers such as Anthropic, OpenAI, xAI, and Google's Gemini remain useful sources, alongside other market leaders, smaller relevant vendors, and open-source maintainers. Popular questions and viral topics are discovery signals, not proof of importance or truth.
 
@@ -42,7 +42,7 @@ Keep compact evidence notes in the daily record: important claims, supporting UR
 
 Write natural Hungarian with an inviting, informed magazine voice. Explain the interesting detail instead of calling everything revolutionary. Technical terms are welcome when necessary; explain unfamiliar ones briefly and keep precise identifiers intact.
 
-Target 100–180 body words, excluding frontmatter and sources. Allow up to 220 when a technical or research caveat needs space. Prefer three or four short paragraphs, usually without headings, and no code blocks or tables. Longer explainers, comparisons, and practical guides belong to separately requested assignments, not an expanded daily quota.
+Choose depth by story: concise brief 150–250 body words; reported news 250–450; focused research, trend, or mechanism explainer 400–700. These are targets, not padding requirements; exclude frontmatter and sources. Use short paragraphs and descriptive headings when helpful. Focused evidence-based explainers are authorized, but extensive implementation tutorials and untested hands-on reviews are not. Five distinct useful posts is the goal, with no fixed format quota.
 
 Each brief should establish what changed and when, its concrete relevance to the intended reader, and who can use it or what limitation matters. Use a short, specific title that the evidence supports and a one-sentence summary. Avoid generic introductions, long lists, promotional calls to action, fabricated reactions, and repeated stock phrases.
 
@@ -80,9 +80,9 @@ The example date and tag are not defaults. Use `kiadasok` for releases, `elemzes
 
 Read recent posts and `docs/news-runs/` before selection. Compare canonical source URLs and product/feature/event/date; different titles or URLs can describe the same event. Search older likely matches as needed. Follow-ups require a material new development, explained explicitly and linked to previous coverage when useful.
 
-Use deterministic descriptive slugs and check that a path is absent before creating it. On retries, recognize verified existing posts for the same event as completed. Count this job's earlier posts on the local calendar date toward the three-post cap. Preserve unrelated work.
+Use deterministic descriptive slugs and check that a path is absent before creating it. On retries, recognize verified existing posts for the same event as completed. Count this job's earlier posts on the local calendar date toward the five-post cap. Preserve unrelated work.
 
-Record each completed scan in `docs/news-runs/YYYY-MM-DD.md` using Budapest dates. Include UTC coverage start/end, inspected main SHA, selected/skipped stories, source links and event dates, post paths, concise claim/caveat review, and actual validation/deployment observations. Preserve earlier same-day results on retries. Do not store secrets or long copied research.
+Use the [daily run template](templates/daily-news-run.md). Record each completed scan in `docs/news-runs/YYYY-MM-DD.md` using Budapest dates. Include UTC coverage start/end, inspected main SHA, selected/skipped stories, source links and event dates, post paths, concise claim/caveat review, and actual validation/deployment observations. Preserve earlier same-day results on retries. Do not store secrets or long copied research.
 
 Advance the successful coverage checkpoint only after the scan and all intended post writes are verified. A completed no-news scan may advance it; partial failure must not. Discovered errors in old posts should be reported for authorized correction, not silently changed by this job.
 
