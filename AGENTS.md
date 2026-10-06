@@ -18,7 +18,7 @@ Read the skill files explicitly if the current agent does not discover repositor
 
 Follow [news-publishing.md](docs/news-publishing.md) and [daily-editorial-workflow.md](docs/daily-editorial-workflow.md). Complete five distinct Hungarian posts in one daily run, prioritizing AI news and verified viral AI topics. Use explicit editor, researcher, writer, reviewer, publisher, and recorder stages; one agent may execute them sequentially. No additional schedules are needed.
 
-Prefer Claude, OpenAI, Gemini, Grok and Muse news when fresh, verified stories are available. Consult official sources and other reputable AI magazines as specified in the publishing brief; no brand quota overrides evidence or reader value.
+Prefer Claude, OpenAI, Gemini, Grok and Muse news when fresh, verified stories are available. Include useful CEO/founder interviews, workplace and everyday AI stories. Consult official sources, Business Insider and other reputable AI/technology newsrooms as specified in the publishing brief; no brand quota overrides evidence or reader value.
 
 Research a diverse shortlist and backups, build an evidence ledger, apply technical-review and humanizer, then recheck final claims and metadata. Replace a blocked story and continue. Never lower evidence standards to reach five. Use the [run template](docs/templates/daily-news-run.md) for retry-safe continuity.
 

@@ -24,11 +24,15 @@ Build about 12 distinct leads across these lanes:
 | Creative and viral AI | Original demos, surprising uses, verified successes or failures |
 | Agents and developer tools | Coding, automation, open-source and integration changes |
 | Research and mechanisms | What an experiment demonstrated and why it matters |
-| Real-world consequences | Adoption, safety, security, economics, hardware and trends |
+| Real-world consequences | CEO/founder interviews, workplace changes, everyday AI use, adoption, safety, security, economics and hardware |
 
 Aim for at least four lanes and three unrelated organizations/creator groups in the final five; normally no more than two stories about one provider. These are flexible diversity preferences: do not reject worthwhile priority-subject news solely to achieve a lane count. They are not permission to publish weak stories. Record justified exceptions. Never split one announcement into several posts to meet the target. Inspect the previous seven editions for repetitive coverage and neglected subjects.
 
 Search across providers, original creators and community discovery surfaces. Verify original provenance and observable dated traction before calling something viral. Otherwise report the interesting event without a virality claim.
+
+Include a people-and-business discovery track in every edition: AI-company CEOs and founders, substantive interviews and podcasts, leadership decisions, workplace changes, hiring and skills, everyday AI use, creative culture, and adoption stories readers can relate to. Prefer a concrete connection to products, users, developers, work or society. A useful reported anecdote can qualify without a new model release; identify it as an individual account, not general proof. CEO statements are attributed views or forecasts unless independently established, not product capability evidence. Verify names, roles, quote context and original interview dates. Follow interviews to recordings/transcripts or original reporting where available. Avoid private-life gossip, personality feuds and quote-only outrage with no meaningful AI consequence. Consider at least one strong candidate from this track, without forcing a publication quota.
+
+Use the newsroom roster in [news-publishing.md](news-publishing.md), including Business Insider, Reuters, The Verge, TechCrunch and accessible CNBC coverage. Keep this track within the same five-post edition.
 
 ## 2. Researcher: establish evidence and rank
 
