@@ -18,6 +18,8 @@ Read the skill files explicitly if the current agent does not discover repositor
 
 Follow [news-publishing.md](docs/news-publishing.md) and [daily-editorial-workflow.md](docs/daily-editorial-workflow.md). Complete five distinct Hungarian posts in one daily run, prioritizing AI news and verified viral AI topics. Use explicit editor, researcher, writer, reviewer, publisher, and recorder stages; one agent may execute them sequentially. No additional schedules are needed.
 
+Prefer Claude, OpenAI, Gemini, Grok and Muse news when fresh, verified stories are available. Consult official sources and other reputable AI magazines as specified in the publishing brief; no brand quota overrides evidence or reader value.
+
 Research a diverse shortlist and backups, build an evidence ledger, apply technical-review and humanizer, then recheck final claims and metadata. Replace a blocked story and continue. Never lower evidence standards to reach five. Use the [run template](docs/templates/daily-news-run.md) for retry-safe continuity.
 
 The publisher may create NEW posts and update its own run records directly on main. It may not modify existing articles, code, skills, workflows, dependencies, or schedules. Count retries toward the five-post daily cap; a completed edition is a no-op on rerun. The owner authorized this workflow configuration change on 2026-10-06; future publishing runs do not inherit configuration-editing authority.

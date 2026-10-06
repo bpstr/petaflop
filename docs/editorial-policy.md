@@ -6,6 +6,8 @@ Petaflop is a Hungarian magazine about AI, technology, and the tools used to bui
 
 Coverage includes consumer AI features; models and research; coding agents, editors, SDKs, APIs, testing and debugging tools; open-source projects; databases, cloud infrastructure, security, performance, and relevant hardware. A technology story does not need an AI angle. It does need a useful capability, consequential change, well-supported explanation, or practical decision to investigate.
 
+For daily editions, prefer fresh, well-supported Claude, OpenAI, Gemini, Grok and Muse news when available, without forcing one post per brand. Use official sources alongside reputable AI magazines for discovery, verification, original reporting and independent context; follow the detailed source policy in [news-publishing.md](news-publishing.md).
+
 Do not force a numerical consumer/developer split. Consider the recent publishing mix so developer tools and broader technology receive sustained coverage without filling quotas. Vendor popularity and search interest can reveal questions, but do not establish importance or accuracy. Avoid rumor roundups, disguised advertisements, celebrity drama, and release-note rewrites with no reader value.
 
 ## Topics are different from formats

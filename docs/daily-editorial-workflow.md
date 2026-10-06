@@ -12,6 +12,10 @@ Five new posts is the intended outcome and maximum per Budapest date, including 
 
 Read all live instructions and required repository skills, schema, categories, recent posts and run records. Confirm GitHub access. Use the coverage overlap and freshness windows in news-publishing.md.
 
+Prefer fresh, consequential news about Claude, OpenAI (including ChatGPT and Codex), Gemini, Grok, and Muse whenever well-supported, previously uncovered stories are available. Check all five on every run before broadening the shortlist. For Muse, verify the exact AI product and provider from official sources and avoid unrelated products with the same name. This is an editorial preference, not one mandatory article per brand: retain evidence, freshness and reader-value gates, and fill remaining slots with other worthwhile AI stories. Among similarly strong candidates, select these priority subjects first; do not displace a stronger material story merely to fill a brand slot.
+
+Use both official sources and reputable AI magazines/technology newsrooms on every discovery pass. Official announcements, release notes, documentation, research papers and verified company channels are preferred evidence for product facts. Other AI magazines provide leads, independent reporting, comparisons, criticism and context; open their articles and follow material claims to original evidence where available. Credit original reporting when used, clearly attribute facts available only through that reporting, and do not treat several outlets repeating one press release as independent corroboration. Do not merely translate or rewrite another magazine's article. Record the official and magazine sources checked, including access gaps, and the result of each priority-subject scan.
+
 Build about 12 distinct leads across these lanes:
 
 | Lane | Useful angles |
@@ -22,7 +26,7 @@ Build about 12 distinct leads across these lanes:
 | Research and mechanisms | What an experiment demonstrated and why it matters |
 | Real-world consequences | Adoption, safety, security, economics, hardware and trends |
 
-Aim for at least four lanes and three unrelated organizations/creator groups in the final five; normally no more than two stories about one provider. These are diversity preferences, not permission to publish weak stories. Record justified exceptions. Never split one announcement into several posts to meet the target. Inspect the previous seven editions for repetitive coverage and neglected subjects.
+Aim for at least four lanes and three unrelated organizations/creator groups in the final five; normally no more than two stories about one provider. These are flexible diversity preferences: do not reject worthwhile priority-subject news solely to achieve a lane count. They are not permission to publish weak stories. Record justified exceptions. Never split one announcement into several posts to meet the target. Inspect the previous seven editions for repetitive coverage and neglected subjects.
 
 Search across providers, original creators and community discovery surfaces. Verify original provenance and observable dated traction before calling something viral. Otherwise report the interesting event without a virality claim.
 
