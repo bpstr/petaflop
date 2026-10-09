@@ -4,7 +4,7 @@
 - Started: 2026-10-09T06:40:16Z. Coverage: 2026-10-02T06:40:16Z through 2026-10-09T06:44:03Z.
 - Inspected main: `4c344c5c811698ae38589754fa657d89535fddba`.
 - Live GitHub repository read and push permissions confirmed. Required read/write actions discovered.
-- Scan: complete. Publication: reviewed, pending verification. Format: two dedicated articles, no recap and no forced third slot.
+- Scan: complete. Publication: complete; two posts verified on main. Format: two dedicated articles, no recap and no forced third slot.
 - This weekly job is separate from the daily edition; daily records and existing posts are outside this run's write scope.
 
 ## Instructions and duplicate review
@@ -47,8 +47,8 @@ Magazine-writing: each article answers a distinct practical integration question
 
 | Event key | Post path / title | State | Commit / main readback |
 | --- | --- | --- | --- |
-| OpenAI / Decisions public beta / 2026-10-06 | `src/content/posts/2026-10/openai-decisions-api-tipusos-dontesek.md` — Külön API-t kapott az OpenAI-nál az igen, a nem és a választás | ready | Pending publication |
-| Meta-Sierra / PAP proposal / 2026-10-06 | `src/content/posts/2026-10/personal-agent-protocol-meta-sierra.md` — Közös belépési szabályokat tervez a Meta és a Sierra a személyes AI-ügynököknek | ready | Pending publication |
+| OpenAI / Decisions public beta / 2026-10-06 | `src/content/posts/2026-10/openai-decisions-api-tipusos-dontesek.md` — Külön API-t kapott az OpenAI-nál az igen, a nem és a választás | verified | `24125f763da6ce27e0fd29e965c7ed8804f7f27a`; exact UTF-8 main readback |
+| Meta-Sierra / PAP proposal / 2026-10-06 | `src/content/posts/2026-10/personal-agent-protocol-meta-sierra.md` — Közös belépési szabályokat tervez a Meta és a Sierra a személyes AI-ügynököknek | verified | `24125f763da6ce27e0fd29e965c7ed8804f7f27a`; exact UTF-8 main readback |
 
 ## Validation and deployment
 
@@ -57,6 +57,10 @@ Magazine-writing: each article answers a distinct practical integration question
 - `npm run check`: exit 0; 48 files, 0 errors, 0 warnings, one existing schema deprecation hint.
 - `npm run build`: exit 0; 269 pages. Both new article routes rendered. Existing markdown-plugin deprecation and tag-route collision warnings remain; no unrelated content or code changed.
 - No product execution, independent benchmark or responsive visual inspection was performed; text-only reporting uses the existing article layout.
-- Article batch commit, main readback and exact-commit deployment: pending.
+- Article batch: [`24125f763da6ce27e0fd29e965c7ed8804f7f27a`](https://github.com/bpstr/petaflop/commit/24125f763da6ce27e0fd29e965c7ed8804f7f27a), containing exactly two NEW articles and this initial run record. Main was refreshed immediately before publication and updated with a non-forced expected-head lease.
+- Both articles and the initial record were fetched from main and matched validated local UTF-8 contents exactly. Verified publication count: 2.
+- Both built HTML routes were checked for rendered article content and source links.
+- Exact article commit [Pages deployment 37895417870](https://github.com/bpstr/petaflop/actions/runs/37895417870) completed with success; head SHA matches the article batch. The build job succeeded, followed by successful deployment.
+- This completion update changes only this job's record. Deployment evidence refers to the article batch, not this later record-only commit.
 
-Successful coverage checkpoint: unchanged until both intended writes are verified.
+Successful coverage checkpoint: **2026-10-09T06:44:03Z**. Advanced after the completed scan and both intended article writes were verified. Next scan should use a small overlap and this weekly checkpoint, not the daily publisher's checkpoint.
