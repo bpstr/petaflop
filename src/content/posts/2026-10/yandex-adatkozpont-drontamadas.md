@@ -1,7 +1,7 @@
 ---
 title: "Négy nap alatt három Yandex-adatközpontot ért dróntámadás"
 date: 2026-10-12
-summary: "A legújabb csapás a vlagyimiri központot állította le; a korábban eltalált szaszovói telephelyen a Yandex három AI-szuperszámítógépéből kettő működik."
+summary: "A legújabb csapás a vlagyimiri központot állította le; a korábban eltalált szaszovói telephelyen található a Yandex három AI-szuperszámítógépéből kettő."
 category: hirek
 tags: ["AI", "infrastruktúra", "biztonság"]
 draft: false
