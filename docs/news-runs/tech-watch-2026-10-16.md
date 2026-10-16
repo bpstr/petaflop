@@ -5,7 +5,7 @@
 - Coverage: `2026-10-08T18:44:03Z` through `2026-10-16T06:51:26Z`, including a 12-hour overlap.
 - Inspected main: `0f20df8a7c1ea2c21a24e7d3f4f41e2463301a01`.
 - Live GitHub repository read and push permission confirmed; tree, commit, expected-head ref-update and file-update actions discovered.
-- Earlier weekly posts for this date: none. Scan: complete. Edition: reviewed, pending publication verification.
+- Earlier weekly posts for this date: none. Scan: complete. Edition: complete; three posts verified and deployed.
 - Format: three dedicated integration articles; no recap or repeated daily-edition stories.
 - Writes limited to the three NEW article paths below and this weekly job's record. Daily records, existing articles, code, assets, settings and schedules remain unchanged.
 
@@ -59,9 +59,9 @@ No API inference, paid service, product trial or independent benchmark was perfo
 
 | Event key | Post path / title | State | Commit / readback |
 | --- | --- | --- | --- |
-| OpenAI / native Live–Decisions / 2026-10-15 | `src/content/posts/2026-10/gpt-live-nativ-decisions-integracio.md` — Beszéd közben is kiválaszthatja a következő műveletet a GPT-Live | ready | Pending publication |
-| Anthropic / OpenTelemetry beta / 2026-10-14 | `src/content/posts/2026-10/claude-api-opentelemetry-export.md` — Saját megfigyelőrendszerbe köthető a Claude API új nyomkövetése | ready | Pending publication |
-| CopilotKit / CLiF early access / 2026-10-13 | `src/content/posts/2026-10/copilotkit-clif-munkamenetekbol-skillek.md` — A felhasználók munkalépéseiből készít skilljavaslatokat a CopilotKit | ready | Pending publication |
+| OpenAI / native Live–Decisions / 2026-10-15 | `src/content/posts/2026-10/gpt-live-nativ-decisions-integracio.md` — Beszéd közben is kiválaszthatja a következő műveletet a GPT-Live | verified | `689d37dab8464ea618849c2ae4b53cd63855261d`; exact main readback |
+| Anthropic / OpenTelemetry beta / 2026-10-14 | `src/content/posts/2026-10/claude-api-opentelemetry-export.md` — Saját megfigyelőrendszerbe köthető a Claude API új nyomkövetése | verified | `689d37dab8464ea618849c2ae4b53cd63855261d`; exact main readback |
+| CopilotKit / CLiF early access / 2026-10-13 | `src/content/posts/2026-10/copilotkit-clif-munkamenetekbol-skillek.md` — A felhasználók munkalépéseiből készít skilljavaslatokat a CopilotKit | verified | `689d37dab8464ea618849c2ae4b53cd63855261d`; exact main readback |
 
 ## Validation and deployment
 
@@ -71,6 +71,10 @@ No API inference, paid service, product trial or independent benchmark was perfo
 - `npm run check`: exit 0; 48 files, 0 errors, 0 warnings, one existing Zod deprecation hint.
 - `npm run build`: exit 0; 310 pages. Existing markdown-plugin deprecation and tag-route collision warnings remain; unrelated code and content were not changed.
 - All three rendered HTML routes contain article content, publication date and source links. The linked previous Decisions route exists. Responsive visual inspection was not performed; text-only articles reuse the unchanged site layout.
-- Article commit, live-main readback and exact-commit deployment: pending.
+- Article batch: [`689d37dab8464ea618849c2ae4b53cd63855261d`](https://github.com/bpstr/petaflop/commit/689d37dab8464ea618849c2ae4b53cd63855261d). Live main and article inventory were refreshed before the write. Main advanced with a non-forced expected-head update.
+- The commit's changed-file inventory was checked: exactly three NEW article files and this NEW record; no modifications or deletions.
+- All three articles and this initial record were fetched from main and matched validated UTF-8 contents exactly. Verified publication count: 3.
+- Exact article commit [GitHub Pages run 38863806630](https://github.com/bpstr/petaflop/actions/runs/38863806630) completed with success. Its head SHA matches the publication commit. Deployment is confirmed, not merely queued.
+- This completion update changes only the weekly record; deployment evidence above refers to the exact article batch, not the later record-only commit.
 
-Successful coverage checkpoint: unchanged until all three intended publications are verified.
+Successful coverage checkpoint: **2026-10-16T06:51:26Z**, advanced after the complete scan and exact main readback of all three intended publications. Use a small overlap from this weekly checkpoint on the next run; do not substitute the daily edition checkpoint.
