@@ -4,7 +4,7 @@
 - Authority: the owner explicitly requested adding AlphaSignal to future post research and publishing additional posts. This is a separate manual batch, as permitted by `docs/daily-editorial-workflow.md`; today's completed five-post daily edition and its record remain unchanged.
 - Inspected main: `045db8891de7cf06838a5b450b88e9be4c2db3e9`.
 - Intended publications: four distinct Hungarian posts, two release briefs and two research explainers.
-- State: reviewed; pending publication and exact main readback.
+- State: complete; four posts verified on main and deployed successfully.
 
 ## Future research configuration
 
@@ -49,4 +49,15 @@ All four credit their specific AlphaSignal discovery article and cite original e
 
 ## Publication ledger
 
-All four files are under `src/content/posts/2026-10/` and are ready for one atomic publication with the four source-policy updates and this record. Exact article commit, readback and deployment observations will be recorded only after they occur. The daily edition's coverage checkpoint is unchanged.
+All four files under `src/content/posts/2026-10/`, the four source-policy updates and this record were published atomically in [`60bd704468d12e158495c4829bcd991e7171751a`](https://github.com/bpstr/petaflop/commit/60bd704468d12e158495c4829bcd991e7171751a). Main advanced from the inspected head with a non-forced expected-head update. GitHub's commit inventory confirmed exactly those nine paths; every file was fetched back from main and matched both its validated content and expected Git blob hash.
+
+| Article | Verified blob SHA |
+| --- | --- |
+| DeepInfer | `cc08d545bee332595e2519cd83df8805a7f61cb1` |
+| Exa 3.0 | `95796920e413f948106d65b60beaaedd4085cff5` |
+| Muse Glimmer | `0133b7d33a93e42f71663daeae4ae4e190419ee1` |
+| MultiLangBench | `1ec601e4d5795468af5615849d6f690082f3c579` |
+
+[GitHub Pages run 39454208537](https://github.com/bpstr/petaflop/actions/runs/39454208537), for that exact article commit, completed successfully. Its build and deploy jobs both reported success; the final workflow status was observed at 2026-10-20T16:05:13Z. This establishes the remote build/deployment outcome; it does not claim that local npm checks ran.
+
+Both existing task prompts were fetched after updating and matched the intended AlphaSignal instructions exactly, with their previous timing and enabled state preserved. The manual batch is complete. The daily edition's record, quota and coverage checkpoint remain unchanged.
