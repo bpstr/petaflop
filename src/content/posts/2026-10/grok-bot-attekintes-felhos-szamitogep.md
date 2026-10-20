@@ -10,7 +10,7 @@ hidden: false
 
 A legtöbb AI-asszisztens egy chatablakban válaszol, a munka többi részét pedig neked kell elvégezned. A Grok Bot ezen akar változtatni: az augusztus 11-én bétaként indított szolgáltatás ügynökei egy felhőben futó, tartós számítógépen dolgoznak, saját böngészővel, fájlrendszerrel és terminállal. Belépnek az általad használt szolgáltatásokba, és a [gyártó szerint](https://x.ai/news/introducing-grok-bot) csak akkor jelentkeznek, ha jóváhagyás kell, vagy elkészült a munka.
 
-Ez az összefoglaló a hivatalos dokumentáción, a változásnaplón és független beszámolókon alapul, nem saját, hosszabb teszten. Átláthatósági megjegyzés: a cikk első változatát a szerkesztőség megbízásából maga a Grok Bot írta. Éppen ezért külön jelöljük, mi a gyártó állítása, és mi az, amit más forrás is alátámaszt.
+Ez a termékbemutató a hivatalos dokumentáción, a változásnaplón és független beszámolókon alapul, nem saját, hosszabb teszten. Átláthatósági megjegyzés: a cikk első változatát a szerkesztőség megbízásából maga a Grok Bot írta. Éppen ezért külön jelöljük, mi a gyártó állítása, és mi az, amit más forrás is alátámaszt.
 
 ## Ki áll mögötte?
 
@@ -54,6 +54,6 @@ A kockázatos lépések mögött egy [Auto-review nevű ellenőrző réteg](http
 
 A felület szeptember 22. óta [magyarul is elérhető](https://x.ai/changelog/bot). A SpaceXSI az X Subscriptiont globálisan, fokozatosan vezeti be, magyarországi vagy uniós korlátozásról szóló külön tájékoztatást viszont nem találtunk. A változásnapló annyit jelez, hogy ha egy modell valamelyik régióban nem érhető el, a Bot a Grokra vált.
 
-Kinek érdemes kipróbálni? Annak, akinek sok ismétlődő, több alkalmazáson átívelő munkája van, és hajlandó gondosan beállítani a határokat: mit küldhet el a Bot magától, és hol kell megállnia. Aki egyetlen jelszót sem adna egy felhős ügynök kezébe, annak a közös gép modellje ma is erős ellenérv.
+Kinek lehet hasznos? Inkább annak, akinek sok ismétlődő, több alkalmazáson átívelő munkája van, és hajlandó gondosan beállítani a határokat: mit küldhet el a Bot magától, és hol kell megállnia. Aki egyetlen jelszót sem adna egy felhős ügynök kezébe, annak a közös gép modellje ma is erős ellenérv. Független, hosszabb távú megbízhatósági mérést egyelőre nem találtunk, így a gyártó belső sikertörténetei nem helyettesítik a saját, kis tétű próbát.
 
 *Források: [SpaceXSI – Introducing Grok Bot](https://x.ai/news/introducing-grok-bot), [Grok Bot dokumentáció](https://docs.x.ai/grok-bot/overview), [GYIK](https://docs.x.ai/grok-bot/faq), [Computer and apps](https://docs.x.ai/grok-bot/computer-and-apps), [Security](https://docs.x.ai/grok-bot/security), [Work with Grok Bot (Cursor docs)](https://cursor.com/docs/grok-bot/work), [Changelog](https://x.ai/changelog/bot), [X Subscription](https://x.ai/news/x-subscription), [Pricing](https://x.ai/pricing), [Cursor fórum – bejelentés](https://forum.cursor.com/t/introducing-grok-bot/168053), [Cursor fórum – újraépítés](https://forum.cursor.com/t/cloud-computer-wipes-packages-after-rebuild/169847), [The Verge](https://www.theverge.com/ai-artificial-intelligence/978666/spacexai-grok-bot-ai-agent-beta-launch), [Productize](https://productize.life/blog/grok-bot-review/en), [Reuters/Investing.com](https://www.investing.com/news/stock-market-news/musk-says-he-will-rename-spacexai-to-spacexsi-4930944).*
