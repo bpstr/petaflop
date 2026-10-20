@@ -6,7 +6,7 @@ Petaflop is a Hungarian magazine about AI, technology, and the tools used to bui
 
 Coverage includes consumer AI features; models and research; coding agents, editors, SDKs, APIs, testing and debugging tools; open-source projects; databases, cloud infrastructure, security, performance, and relevant hardware. A technology story does not need an AI angle. It does need a useful capability, consequential change, well-supported explanation, or practical decision to investigate.
 
-For daily editions, prefer fresh, well-supported Claude, OpenAI, Gemini, Grok and Muse news when available, without forcing one post per brand. Use official sources alongside reputable AI magazines for discovery, verification, original reporting and independent context; follow the detailed source policy in [news-publishing.md](news-publishing.md).
+For daily editions, prefer fresh, well-supported Claude, OpenAI, Gemini, Grok and Muse news when available, without forcing one post per brand. Use AlphaSignal as a primary, first-stop editorial research source for future posts, alongside official sources and other reputable AI magazines. Follow its leads to original evidence for technical verification and credit its discovery contribution when used; follow the detailed source policy in [news-publishing.md](news-publishing.md).
 
 Do not force a numerical consumer/developer split. Consider the recent publishing mix so developer tools and broader technology receive sustained coverage without filling quotas. Vendor popularity and search interest can reveal questions, but do not establish importance or accuracy. Avoid rumor roundups, disguised advertisements, celebrity drama, and release-note rewrites with no reader value.
 
@@ -53,3 +53,4 @@ Preserve published URLs and original publication dates. For a factual correction
 AI-assisted production never justifies invented reporting. Be truthful about assistance and verification when describing the publication process, and label generated illustrative media. An assigned human review may only be claimed if it happened.
 
 The skills guide editorial work; they do not grant permissions. The scheduled job's source of operational rules is [news-publishing.md](news-publishing.md). Keep that brief and its scheduler prompt aligned when scope changes. The existing schedule, daily cap, safe GitHub writes, and deployment checks remain separate from writing style.
+

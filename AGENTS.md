@@ -18,7 +18,7 @@ Read the skill files explicitly if the current agent does not discover repositor
 
 Follow [news-publishing.md](docs/news-publishing.md) and [daily-editorial-workflow.md](docs/daily-editorial-workflow.md). Complete five distinct Hungarian posts in one daily run, prioritizing AI news and verified viral AI topics. Use explicit editor, researcher, writer, reviewer, publisher, and recorder stages; one agent may execute them sequentially. No additional schedules are needed.
 
-Prefer Claude, OpenAI, Gemini, Grok and Muse news when fresh, verified stories are available. Include useful CEO/founder interviews, workplace and everyday AI stories. Consult official sources, Business Insider and other reputable AI/technology newsrooms as specified in the publishing brief; no brand quota overrides evidence or reader value.
+Prefer Claude, OpenAI, Gemini, Grok and Muse news when fresh, verified stories are available. Include useful CEO/founder interviews, workplace and everyday AI stories. Start discovery with AlphaSignal as a primary editorial research source, then consult official sources, Business Insider and other reputable AI/technology newsrooms as specified in the publishing brief. Verify material technical claims against original evidence; no source or brand quota overrides evidence or reader value.
 
 Research a diverse shortlist and backups, build an evidence ledger, apply technical-review and humanizer, then recheck final claims and metadata. Replace a blocked story and continue. Never lower evidence standards to reach five. Use the [run template](docs/templates/daily-news-run.md) for retry-safe continuity.
 
@@ -38,3 +38,4 @@ The publisher may create NEW posts and update its own run records directly on ma
 Node.js must be `>=22.12.0`; use the committed npm lockfile. Posts go in `src/content/posts/YYYY-MM/`, tools in `src/content/tools/`, and static article assets in `public/static/posts/`. The date folder is part of each post URL.
 
 `src/content.config.ts` defines frontmatter, `src/utils/categories.ts` defines the five editorial sections, and `src/site.config.ts` defines site metadata. Keep framework details in the shared guide and writing rules in the editorial policy and skills rather than copying them into multiple agent entry points.
+

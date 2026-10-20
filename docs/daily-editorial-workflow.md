@@ -14,6 +14,8 @@ Read all live instructions and required repository skills, schema, categories, r
 
 Prefer fresh, consequential news about Claude, OpenAI (including ChatGPT and Codex), Gemini, Grok, and Muse whenever well-supported, previously uncovered stories are available. Check all five on every run before broadening the shortlist. For Muse, verify the exact AI product and provider from official sources and avoid unrelated products with the same name. This is an editorial preference, not one mandatory article per brand: retain evidence, freshness and reader-value gates, and fill remaining slots with other worthwhile AI stories. Among similarly strong candidates, select these priority subjects first; do not displace a stronger material story merely to fill a brand slot.
 
+Start each discovery pass with AlphaSignal's latest feed and editorial coverage as a primary editorial research source, following the source policy and links in [news-publishing.md](news-publishing.md). Record the pages or issues checked, selected and rejected leads, and any access gaps. Verify original event dates independently of AlphaSignal's coverage dates; use accessible original sources and the existing roster when an item cannot be opened.
+
 Use both official sources and reputable AI magazines/technology newsrooms on every discovery pass. Official announcements, release notes, documentation, research papers and verified company channels are preferred evidence for product facts. Other AI magazines provide leads, independent reporting, comparisons, criticism and context; open their articles and follow material claims to original evidence where available. Credit original reporting when used, clearly attribute facts available only through that reporting, and do not treat several outlets repeating one press release as independent corroboration. Do not merely translate or rewrite another magazine's article. Record the official and magazine sources checked, including access gaps, and the result of each priority-subject scan.
 
 Build about 12 distinct leads across these lanes:
@@ -91,3 +93,4 @@ Return published Hungarian titles/links, count out of five, commit, actual check
 - Four qualified after replacement discovery: publish four with an explicit shortfall.
 - Already complete today: no article writes or redundant commit.
 - Failed deployment: retain verified posts and report failure without republishing.
+
