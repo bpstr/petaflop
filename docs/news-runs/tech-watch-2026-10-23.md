@@ -5,7 +5,7 @@
 - Coverage: `2026-10-15T18:51:26Z` through `2026-10-23T06:22:17Z`, including a 12-hour overlap.
 - Inspected main: `692af27e9956aecd7524cfefacdb4aa34b3e7da5`.
 - Live GitHub repository read and push permission confirmed; tree, commit, non-forced expected-head ref update and workflow-run actions are available.
-- Earlier weekly posts for this date: none. Scan: complete. Edition: pending verification.
+- Earlier weekly posts for this date: none. Scan: complete. Edition: complete; three posts verified and deployed.
 - Format: three dedicated developer-ecosystem articles; no recap and no repeated daily-edition story.
 - Write scope: three NEW article paths below and this weekly record only.
 
@@ -50,9 +50,9 @@ Magazine-writing assigned one reader question to each post. Technical-review com
 
 | Event key | Post path / title | State | Commit / readback |
 | --- | --- | --- | --- |
-| AAIF four projects / 2026-10-22 | `src/content/posts/2026-10/aaif-agent-skills-open-responses-openenv-opensandbox.md` — Négy ügynökprojekt kapott közös, semleges otthont | ready | pending |
-| OpenAI Decisions GA / 2026-10-22 | `src/content/posts/2026-10/openai-decisions-api-altalanosan-elerheto.md` — Kilépett a bétából az OpenAI Decisions API-ja | ready | pending |
-| Claude API version / 2026-10-21 | `src/content/posts/2026-10/claude-api-2026-10-21-migracio.md` — Kódmódosítást kér a Claude API új főverziója | ready | pending |
+| AAIF four projects / 2026-10-22 | `src/content/posts/2026-10/aaif-agent-skills-open-responses-openenv-opensandbox.md` — Négy ügynökprojekt kapott közös, semleges otthont | verified | `be7c2a0bfb80a4d171df758ca95e07a28e2a29fd`; exact main readback |
+| OpenAI Decisions GA / 2026-10-22 | `src/content/posts/2026-10/openai-decisions-api-altalanosan-elerheto.md` — Kilépett a bétából az OpenAI Decisions API-ja | verified | `be7c2a0bfb80a4d171df758ca95e07a28e2a29fd`; exact main readback |
+| Claude API version / 2026-10-21 | `src/content/posts/2026-10/claude-api-2026-10-21-migracio.md` — Kódmódosítást kér a Claude API új főverziója | verified | `be7c2a0bfb80a4d171df758ca95e07a28e2a29fd`; exact main readback |
 
 ## Validation and deployment
 
@@ -61,6 +61,10 @@ Magazine-writing assigned one reader question to each post. Technical-review com
 - `npm run check`: exit 0; 48 files, 0 errors, 0 warnings, one existing Zod deprecation hint.
 - `npm run build`: exit 0; 355 pages. Existing markdown-plugin deprecation, tag-route collision and robots-file warnings remain; unrelated files were not changed.
 - All three generated HTML routes contain article content and source links. The internal link to the earlier Decisions article resolves in the build. Responsive visual inspection was not performed; text-only posts reuse the unchanged site layout.
-- Article commit, exact main readback and exact-SHA deployment: pending.
+- Article batch: [`be7c2a0bfb80a4d171df758ca95e07a28e2a29fd`](https://github.com/bpstr/petaflop/commit/be7c2a0bfb80a4d171df758ca95e07a28e2a29fd). Main advanced from the inspected SHA with a non-forced expected-head update.
+- The commit contains exactly the three NEW article files and this NEW weekly record: four additions, no modification or deletion.
+- All four files were fetched from main and matched the validated UTF-8 contents exactly. Verified publication count: 3.
+- Exact article commit [GitHub Pages run 39911321474](https://github.com/bpstr/petaflop/actions/runs/39911321474) completed successfully at 2026-10-23T06:25:38Z; both build and deploy jobs succeeded and the run's head SHA matches the article commit.
+- This completion update changes only the weekly record; deployment evidence refers to the exact article batch above.
 
-Successful coverage checkpoint: unchanged pending complete scan, validation, publication and exact main readback.
+Successful coverage checkpoint: **2026-10-23T06:22:17Z**, advanced after the complete scan, exact main readback of all intended publications and successful exact-SHA deployment.
