@@ -5,7 +5,7 @@
 - Coverage: `2026-10-22T18:22:17Z` through `2026-10-30T07:53:16Z`, including a 12-hour overlap.
 - Inspected main: `6789fe8ba2587c0efbac8735748cd0764986bdac`.
 - Live GitHub repository read and push permission confirmed; tree, commit, non-forced expected-head ref update and workflow-run reads are available.
-- Earlier weekly posts for this date: none. Scan: complete. Edition: pending verification; three intended dedicated posts.
+- Earlier weekly posts for this date: none. Scan: complete. Edition: complete; three dedicated posts verified and deployed.
 - Format: three dedicated developer-ecosystem articles; no recap and no repeated daily-edition story.
 - Write scope: three NEW article paths below and this NEW weekly record only.
 
@@ -48,9 +48,9 @@ Magazine-writing assigned one practical reader question to each post. Technical-
 
 | Event key | Post path / title | State | Commit / readback |
 | --- | --- | --- | --- |
-| Gemini API CLI / 2026-10-27 | `src/content/posts/2026-10/google-gemini-api-cli-beta.md` — Ügynökbarát parancssoros klienst kapott a Gemini API | ready | pending |
-| Generate Content storage / 2026-10-26 | `src/content/posts/2026-10/google-gemini-api-alapertelmezett-naplozas.md` — Alapból naplózza az új fizetős projektek Gemini API-kéréseit a Google | ready | pending |
-| Claude Tag API / 2026-10-23 | `src/content/posts/2026-10/anthropic-claude-tag-slack-admin-api.md` — API-ból szabályozható, mely Slack-csatornákon válaszoljon a Claude | ready | pending |
+| Gemini API CLI / 2026-10-27 | `src/content/posts/2026-10/google-gemini-api-cli-beta.md` — Ügynökbarát parancssoros klienst kapott a Gemini API | verified | `6eda36de1f065af6e78040c19e96a670077087ad`; exact main readback |
+| Generate Content storage / 2026-10-26 | `src/content/posts/2026-10/google-gemini-api-alapertelmezett-naplozas.md` — Alapból naplózza az új fizetős projektek Gemini API-kéréseit a Google | verified | `6eda36de1f065af6e78040c19e96a670077087ad`; exact main readback |
+| Claude Tag API / 2026-10-23 | `src/content/posts/2026-10/anthropic-claude-tag-slack-admin-api.md` — API-ból szabályozható, mely Slack-csatornákon válaszoljon a Claude | verified | `6eda36de1f065af6e78040c19e96a670077087ad`; exact main readback |
 
 ## Validation and deployment
 
@@ -59,8 +59,11 @@ Magazine-writing assigned one practical reader question to each post. Technical-
 - `npm run check`: exit 0; 48 files, 0 errors, 0 warnings, one existing Zod deprecation hint.
 - `npm run build`: exit 0; 423 pages. All three article routes were generated. Existing markdown-plugin deprecation, tag-route collision and robots-file warnings remain; unrelated files were not changed.
 - Generated HTML contains each article and its source links. Responsive visual inspection was not performed; the text-only posts reuse the unchanged site layout.
-- Article commit SHA: pending.
-- Main readback: pending.
-- Deployment: pending.
+- Article batch: [`6eda36de1f065af6e78040c19e96a670077087ad`](https://github.com/bpstr/petaflop/commit/6eda36de1f065af6e78040c19e96a670077087ad). Main advanced from the inspected SHA with a non-forced expected-head update.
+- The commit contains exactly the three NEW article files and this NEW weekly record: four additions, no modification or deletion.
+- All four files were fetched from main and matched the validated UTF-8 contents exactly. Verified publication count: 3.
+- Exact article commit [GitHub Pages run 41023057889](https://github.com/bpstr/petaflop/actions/runs/41023057889) completed successfully at 2026-10-30T07:56:26Z; the build and deploy jobs succeeded and the run's head SHA matches the article commit.
+- Direct public-route inspection was unavailable to the research browser, so no separate HTTP endpoint claim is made. Deployment state: deployed by the repository's Pages workflow; repository verification complete.
+- This completion update changes only the weekly record; deployment evidence refers to the exact article batch above.
 
-Successful coverage checkpoint: unchanged until the complete scan, all intended writes and main readback are verified; intended next checkpoint is `2026-10-30T07:53:16Z`.
+Successful coverage checkpoint: **2026-10-30T07:53:16Z**, advanced after the complete scan, exact main readback of all intended publications and successful exact-SHA deployment.
