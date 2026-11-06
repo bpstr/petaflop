@@ -5,7 +5,7 @@
 - Coverage: `2026-10-29T19:53:16Z` through `2026-11-06T07:43:10Z`, including a 12-hour overlap.
 - Inspected main: `bffd66201fec6cad62cdbbec33f6f9980193fa28`.
 - Live GitHub repository read and push permission confirmed; tree, commit, non-forced expected-head ref update and workflow-run reads are available.
-- Earlier weekly posts for this date: none. Scan: complete. Edition: prepared; publication verification pending.
+- Earlier weekly posts for this date: none. Scan: complete. Edition: complete; three posts verified and deployed.
 - Format: two dedicated developer-ecosystem articles and one weekly recap containing three smaller, distinct releases.
 - Write scope: three NEW article paths below and this NEW weekly record only.
 
@@ -49,9 +49,9 @@ Magazine-writing assigned one practical reader question to each section. Technic
 
 | Event key | Post path / title | State | Commit / readback |
 | --- | --- | --- | --- |
-| Google Chat streaming / 2026-11-04 | `src/content/posts/2026-11/google-chat-api-elo-uzenetfolyam.md` — Élőben közvetíthetik munkájukat az AI-ügynökök a Google Chatben | prepared | pending |
-| Hermes Agent 0.23 / 2026-11-05 | `src/content/posts/2026-11/nous-hermes-agent-023-kozos-atjaro.md` — Egy közös átjáró mögé költözött a Hermes Agent minden kliense | prepared | pending |
-| Protocol SDK recap / 2026-10-30–2026-11-05 | `src/content/posts/2026-11/ugynokprotokoll-sdk-heti-korkep-2026-11-06.md` — Kotlinra, Rubyra és vállalati csevegőkre terjeszkedik az ügynök-ökoszisztéma | prepared | pending |
+| Google Chat streaming / 2026-11-04 | `src/content/posts/2026-11/google-chat-api-elo-uzenetfolyam.md` — Élőben közvetíthetik munkájukat az AI-ügynökök a Google Chatben | verified | `a811f4c6413f0b2323f5ca7b5d61024e8accd001`; exact main readback |
+| Hermes Agent 0.23 / 2026-11-05 | `src/content/posts/2026-11/nous-hermes-agent-023-kozos-atjaro.md` — Egy közös átjáró mögé költözött a Hermes Agent minden kliense | verified | `a811f4c6413f0b2323f5ca7b5d61024e8accd001`; exact main readback |
+| Protocol SDK recap / 2026-10-30–2026-11-05 | `src/content/posts/2026-11/ugynokprotokoll-sdk-heti-korkep-2026-11-06.md` — Kotlinra, Rubyra és vállalati csevegőkre terjeszkedik az ügynök-ökoszisztéma | verified | `a811f4c6413f0b2323f5ca7b5d61024e8accd001`; exact main readback |
 
 ## Validation and deployment
 
@@ -60,7 +60,11 @@ Magazine-writing assigned one practical reader question to each section. Technic
 - `npm run check`: exit 0; 48 files, 0 errors, 0 warnings, one existing Zod deprecation hint.
 - `npm run build`: exit 0; 484 pages. All three article routes were generated. Existing markdown-plugin deprecation, tag-route collision and robots-file warnings remain; unrelated files were not changed.
 - Generated HTML contains each article and its source links. Responsive visual inspection was not performed; the text-only posts reuse the unchanged site layout.
-- Publication pending.
-- Deployment pending.
+- Article batch: [`a811f4c6413f0b2323f5ca7b5d61024e8accd001`](https://github.com/bpstr/petaflop/commit/a811f4c6413f0b2323f5ca7b5d61024e8accd001). Main advanced from the inspected SHA with a non-forced expected-head update.
+- The commit contains exactly the three NEW article files and this NEW weekly record: four additions, no modification or deletion.
+- All four files were fetched from main and matched the validated UTF-8 contents exactly. Verified publication count: 3.
+- Exact article commit [GitHub Pages run 42182772153](https://github.com/bpstr/petaflop/actions/runs/42182772153) completed successfully at 2026-11-06T07:44:19Z; the build and deploy jobs succeeded and the run's head SHA matches the article commit.
+- Direct public-route inspection was unavailable to the research browser, so no separate HTTP endpoint claim is made. Deployment state: deployed by the repository's Pages workflow; repository verification complete.
+- This completion update changes only the weekly record; deployment evidence refers to the exact article batch above.
 
-Coverage checkpoint will advance only after complete validation, exact main readback and verification of the intended publication outcome.
+Successful coverage checkpoint: **2026-11-06T07:43:10Z**, advanced after the complete scan, exact main readback of all intended publications and successful exact-SHA deployment.
