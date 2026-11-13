@@ -66,7 +66,7 @@ Magazine-writing assigned one practical reader question to each section. Technic
 - The commit contains exactly the three NEW article files and this NEW weekly record: four additions, no modification or deletion.
 - All four files were fetched from main and matched the validated UTF-8 contents exactly. Verified publication count: 3.
 - Exact article commit [GitHub Pages run 43389779669](https://github.com/bpstr/petaflop/actions/runs/43389779669) completed successfully at 2026-11-13T08:00:42Z; the build and deploy jobs succeeded and the run's head SHA matches the article commit.
-- Direct public-route inspection was unavailable to the research browser, so no separate HTTP endpoint claim is made. Deployment state: deployed by the repository's Pages workflow; repository verification complete.
+- All three public routes loaded after deployment with their exact titles, article bodies and source links visible. Deployment state: deployed and live; repository and public-route verification complete.
 - This completion update changes only the weekly record; deployment evidence refers to the exact article batch above.
 
 Successful coverage checkpoint: **2026-11-13T07:55:37Z**, advanced after the complete scan, exact main readback of all intended publications and successful exact-SHA deployment.
