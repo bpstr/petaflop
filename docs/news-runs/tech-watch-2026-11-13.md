@@ -5,7 +5,7 @@
 - Coverage: `2026-11-05T19:43:10Z` through `2026-11-13T07:55:37Z`, including a 12-hour overlap.
 - Inspected main: `e45ec7f8c4278121e9804bfa55d65a9eb907dfb8`.
 - Live GitHub repository read and push permission confirmed; tree, commit, non-forced expected-head ref update and workflow-run reads are available.
-- Earlier weekly posts for this date: none. Scan: complete. Edition: prepared; publication verification pending.
+- Earlier weekly posts for this date: none. Scan: complete. Edition: complete; three posts verified and deployed.
 - Format: two dedicated integration articles and one weekly recap containing four smaller, distinct developer changes.
 - Write scope: three NEW article paths below and this NEW weekly record only.
 
@@ -51,9 +51,9 @@ Magazine-writing assigned one practical reader question to each section. Technic
 
 | Event key | Post path / title | State | Commit / readback |
 | --- | --- | --- | --- |
-| Adobe local MCP / 2026-11-10 | `src/content/posts/2026-11/adobe-creative-cloud-helyi-mcp.md` — Az Adobe natív projektfájlokat nyit meg a külső AI-ügynökök előtt | prepared | pending |
-| Claude Meetings / 2026-11-12 | `src/content/posts/2026-11/claude-meetings-elo-munka.md` — Claude már a megbeszélés közben munkára váltja a beszélgetést | prepared | pending |
-| Developer recap / 2026-11-06–2026-11-13 | `src/content/posts/2026-11/api-es-ugynokprotokoll-heti-korkep-2026-11-13.md` — Új jogosultságok és biztosabb átjárók jönnek az AI-ügynökökhöz | prepared | pending |
+| Adobe local MCP / 2026-11-10 | `src/content/posts/2026-11/adobe-creative-cloud-helyi-mcp.md` — Az Adobe natív projektfájlokat nyit meg a külső AI-ügynökök előtt | verified | `a4aca717ce1761340f1379e67cb35c4eb9ec9259`; exact main readback |
+| Claude Meetings / 2026-11-12 | `src/content/posts/2026-11/claude-meetings-elo-munka.md` — Claude már a megbeszélés közben munkára váltja a beszélgetést | verified | `a4aca717ce1761340f1379e67cb35c4eb9ec9259`; exact main readback |
+| Developer recap / 2026-11-06–2026-11-13 | `src/content/posts/2026-11/api-es-ugynokprotokoll-heti-korkep-2026-11-13.md` — Új jogosultságok és biztosabb átjárók jönnek az AI-ügynökökhöz | verified | `a4aca717ce1761340f1379e67cb35c4eb9ec9259`; exact main readback |
 
 ## Validation and deployment
 
@@ -62,5 +62,11 @@ Magazine-writing assigned one practical reader question to each section. Technic
 - `npm run check`: exit 0; 48 files, 0 errors, 0 warnings, one existing Zod deprecation hint.
 - `npm run build`: exit 0; 535 pages. All three article routes were generated. Existing markdown-plugin deprecation, tag-route collision and robots-file warnings remain; unrelated files were not changed.
 - Generated HTML contains every article title. Responsive visual inspection was not performed; the text-only posts reuse the unchanged site layout.
-- Publication commit, exact main readback and exact-SHA deployment pending.
-- Coverage checkpoint will advance only after the complete scan and intended publication verification.
+- Article batch: [`a4aca717ce1761340f1379e67cb35c4eb9ec9259`](https://github.com/bpstr/petaflop/commit/a4aca717ce1761340f1379e67cb35c4eb9ec9259). Main advanced from the inspected SHA with a non-forced expected-head update.
+- The commit contains exactly the three NEW article files and this NEW weekly record: four additions, no modification or deletion.
+- All four files were fetched from main and matched the validated UTF-8 contents exactly. Verified publication count: 3.
+- Exact article commit [GitHub Pages run 43389779669](https://github.com/bpstr/petaflop/actions/runs/43389779669) completed successfully at 2026-11-13T08:00:42Z; the build and deploy jobs succeeded and the run's head SHA matches the article commit.
+- Direct public-route inspection was unavailable to the research browser, so no separate HTTP endpoint claim is made. Deployment state: deployed by the repository's Pages workflow; repository verification complete.
+- This completion update changes only the weekly record; deployment evidence refers to the exact article batch above.
+
+Successful coverage checkpoint: **2026-11-13T07:55:37Z**, advanced after the complete scan, exact main readback of all intended publications and successful exact-SHA deployment.
