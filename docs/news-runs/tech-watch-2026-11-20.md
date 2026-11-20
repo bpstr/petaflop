@@ -5,7 +5,7 @@
 - Coverage: `2026-11-12T19:55:37Z` through `2026-11-20T07:39:51Z`, including a 12-hour overlap.
 - Inspected main: `0c197d5fa6df693bd0facf72df26d67df05820f9`.
 - Live GitHub repository read and push permission confirmed; tree, commit, non-forced expected-head ref update and workflow-run reads are available.
-- Earlier weekly posts for this date: none. Scan: complete. Edition: ready for publication.
+- Earlier weekly posts for this date: none. Scan: complete. Edition: complete; three posts verified and deployed.
 - Format: three dedicated developer articles.
 - Write scope: three NEW article paths below and this NEW weekly record only.
 
@@ -48,9 +48,9 @@ Magazine-writing assigned one practical reader question to each article. Technic
 
 | Event key | Post path / title | State | Commit / readback |
 | --- | --- | --- | --- |
-| openai-background-windows | `src/content/posts/2026-11/openai-hatterfeladat-kedvezmenyes-ablak.md` — Kivárással olcsóbb lett a hosszú OpenAI API-feladat | ready | pending |
-| gemini-tool-retrieval | `src/content/posts/2026-11/gemini-api-tool-retrieval.md` — Nem kell minden eszköz sémáját betöltenie a Gemini-ügynöknek | ready | pending |
-| devin-security-threats | `src/content/posts/2026-11/devin-security-threats.md` — A friss sebezhetőségből egy kattintással indít kódfelmérést a Devin | ready | pending |
+| openai-background-windows | `src/content/posts/2026-11/openai-hatterfeladat-kedvezmenyes-ablak.md` — Kivárással olcsóbb lett a hosszú OpenAI API-feladat | verified | `641080cdb0b3d58f4441f08c28babe83412c61c9`; exact blob `df5cfc263ce78f88987f4d37eb5725ab5d72943c` |
+| gemini-tool-retrieval | `src/content/posts/2026-11/gemini-api-tool-retrieval.md` — Nem kell minden eszköz sémáját betöltenie a Gemini-ügynöknek | verified | `641080cdb0b3d58f4441f08c28babe83412c61c9`; exact blob `edf94b04af7ccb50e10d30b566e05a7fc8770056` |
+| devin-security-threats | `src/content/posts/2026-11/devin-security-threats.md` — A friss sebezhetőségből egy kattintással indít kódfelmérést a Devin | verified | `641080cdb0b3d58f4441f08c28babe83412c61c9`; exact blob `e89a54e62d54628fc1791f226b08f9341ed02ad8` |
 
 ## Validation and deployment
 
@@ -58,5 +58,11 @@ Magazine-writing assigned one practical reader question to each article. Technic
 - Node v24.22.3. `npm ci --ignore-scripts --no-audit --no-fund` succeeded.
 - `npm run check`: exit 0; 48 files, 0 errors, 0 warnings, one existing Zod deprecation hint.
 - `npm run build`: exit 0; 602 pages. All three article routes and exact titles were generated. Existing markdown-plugin deprecation, tag-route collision and robots-file warnings remain; unrelated files were not changed.
-- Pending publication, exact main readback and bounded deployment inspection.
-- The successful coverage checkpoint will advance only after the complete scan and intended publication verification.
+- Article batch: [`641080cdb0b3d58f4441f08c28babe83412c61c9`](https://github.com/bpstr/petaflop/commit/641080cdb0b3d58f4441f08c28babe83412c61c9). Main advanced from the inspected SHA with a non-forced expected-head update.
+- The article commit contains exactly the three NEW article files and this NEW weekly record: four additions, no modification or deletion.
+- All four files were fetched from the article commit and matched the validated UTF-8 contents exactly. Verified publication count: 3.
+- Exact article commit [GitHub Pages run 44697087328](https://github.com/bpstr/petaflop/actions/runs/44697087328) completed successfully; the build and deploy jobs succeeded and the run's head SHA matches the article commit.
+- All three public routes loaded after deployment with their exact titles, article bodies and source links visible. Deployment state: deployed and live; repository and public-route verification complete.
+- This completion update changes only the weekly record; deployment evidence refers to the exact article batch above.
+
+Successful coverage checkpoint: **2026-11-20T07:45:17Z**, advanced after the complete scan, exact main readback of all intended publications, successful exact-SHA deployment and live-route verification.
